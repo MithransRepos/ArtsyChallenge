@@ -7,14 +7,40 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class HomeViewController: UIViewController {
+class HomeViewController: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
+        setupXStripBarStyle()
         super.viewDidLoad()
-
+        setupXStripBar()
     }
 
-        
+    
+    private func setupXStripBarStyle(){
+        settings.style.buttonBarBackgroundColor = .clear
+        settings.style.selectedBarBackgroundColor = .black
+        settings.style.buttonBarItemTitleColor = .black
+    }
+    
+    private func setupXStripBar(){
+        buttonBarView.removeFromSuperview()
+        navigationController?.navigationBar.addSubview(buttonBarView)
+    }
+    
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        return [HomeTabViewController(), HomeTabViewController(), HomeTabViewController()]
+    }
+    
+    override func reloadPagerTabStripView() {
+        super.reloadPagerTabStripView()
+    }
+    
+    override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
+        super.configureCell(cell, indicatorInfo: indicatorInfo)
+        cell.backgroundColor = .clear
+    }
 
 }

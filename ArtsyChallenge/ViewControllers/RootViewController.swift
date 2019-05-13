@@ -16,7 +16,7 @@ class RootViewController: UITabBarController {
     }
     
     private func setupMenu() {
-        let homeViewController = HomeViewController()
+        let homeViewController = UINavigationController(rootViewController: HomeViewController()) 
         let locationViewController = LocationViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
         locationViewController.tabBarItem = UITabBarItem(title: "Map", image: nil, tag: 0)
