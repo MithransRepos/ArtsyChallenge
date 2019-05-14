@@ -8,22 +8,18 @@
 
 import UIKit
 
-
 class RootViewController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupMenu()
+        setupMenu()
     }
-    
+
     private func setupMenu() {
         tabBar.backgroundColor = .white
-        let homeViewController = UINavigationController(rootViewController: HomeViewController()) 
+        let homeViewController = UINavigationController(rootViewController: HomeViewController())
         let locationViewController = LocationViewController()
         homeViewController.tabBarItem = UITabBarItem.with(icon: Icon.home)
         locationViewController.tabBarItem = UITabBarItem.with(icon: Icon.map)
         viewControllers = [homeViewController, locationViewController]
     }
-   
-
 }

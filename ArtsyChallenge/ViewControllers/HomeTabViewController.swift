@@ -10,30 +10,25 @@ import UIKit
 import XLPagerTabStrip
 
 class HomeTabViewController: UIViewController {
-    
     var tittleText: String = ""
-    
+
     init(tittleText: String) {
         self.tittleText = tittleText
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }
 
 extension HomeTabViewController: IndicatorInfoProvider {
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+    func indicatorInfo(for _: PagerTabStripViewController) -> IndicatorInfo {
         let indicatorItem = IndicatorInfo(title: tittleText)
         return indicatorItem
     }
-    
-    
 }
