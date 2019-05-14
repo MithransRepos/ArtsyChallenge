@@ -12,8 +12,10 @@
 		5BA1B0D365ED467B49374A87 /* Pods_ArtsyChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244F20DAA4B7C99CFDF0CADB /* Pods_ArtsyChallenge.framework */; };
 		900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */; };
 		900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */; };
+		900B5D92228A90C400EE69FD /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D91228A90C400EE69FD /* Painting.swift */; };
+		900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D94228A9AB200EE69FD /* UIViewExtension.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
-		90B37D9322898E35004A27C7 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9222898E35004A27C7 /* HomeTabViewController.swift */; };
+		90B37D9322898E35004A27C7 /* HomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9222898E35004A27C7 /* HomeChildViewController.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
@@ -53,8 +55,10 @@
 		7950AFE28D355970B692E5E7 /* Pods_ArtsyChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtsyChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
+		900B5D91228A90C400EE69FD /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
+		900B5D94228A9AB200EE69FD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		90B37D9222898E35004A27C7 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		90B37D9222898E35004A27C7 /* HomeChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildViewController.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		900B5D93228A90CB00EE69FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				900B5D91228A90C400EE69FD /* Painting.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		90B37D8C2289856F004A27C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 				90B37D9422898FD5004A27C7 /* UIColorExtension.swift */,
 				900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */,
 				900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */,
+				900B5D94228A9AB200EE69FD /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 		90FFEFE722896C1C00342FC0 /* ArtsyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				900B5D93228A90CB00EE69FD /* Model */,
 				90B37D9622899A08004A27C7 /* ViewModels */,
 				90B37D8C2289856F004A27C7 /* Extensions */,
 				90FFF0582289735F00342FC0 /* ViewControllers */,
@@ -202,7 +216,7 @@
 				90FFF0562289735300342FC0 /* RootViewController.swift */,
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
 				90FFF05B228974FE00342FC0 /* LocationViewController.swift */,
-				90B37D9222898E35004A27C7 /* HomeTabViewController.swift */,
+				90B37D9222898E35004A27C7 /* HomeChildViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -418,12 +432,14 @@
 			files = (
 				900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */,
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
+				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
 				90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */,
 				90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */,
 				90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */,
-				90B37D9322898E35004A27C7 /* HomeTabViewController.swift in Sources */,
+				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
+				90B37D9322898E35004A27C7 /* HomeChildViewController.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

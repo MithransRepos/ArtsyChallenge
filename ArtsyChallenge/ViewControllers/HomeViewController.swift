@@ -36,7 +36,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        return [HomeTabViewController(tittleText: "Artists"), HomeTabViewController(tittleText: "For you"), HomeTabViewController(tittleText: "Auctions")]
+        return [HomeChildViewController(tittleText: "Artists"), HomeChildViewController(tittleText: "For you"), HomeChildViewController(tittleText: "Auctions")]
     }
 
     override func reloadPagerTabStripView() {
