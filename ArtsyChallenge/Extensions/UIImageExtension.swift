@@ -11,12 +11,13 @@ import UIKit
 
 enum Icon: String {
     case home = "home"
-    case homeSelected = "home-selected"
     case map = "map"
-    case mapSelected = "map-selected"
     
     var getImage: UIImage{
         return UIImage(named: rawValue) ?? UIImage()
+    }
+    var getSelectedImage: UIImage{
+        return UIImage(named: "\(rawValue)-selected") ?? UIImage()
     }
 }
 

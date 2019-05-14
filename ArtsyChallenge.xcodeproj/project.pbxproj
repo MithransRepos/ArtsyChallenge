@@ -11,6 +11,7 @@
 		5ADF55DC2131B5A8B3595D2A /* Pods_ArtsyChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A78B1A224D5AC68CF22D922 /* Pods_ArtsyChallengeTests.framework */; };
 		5BA1B0D365ED467B49374A87 /* Pods_ArtsyChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244F20DAA4B7C99CFDF0CADB /* Pods_ArtsyChallenge.framework */; };
 		900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */; };
+		900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9322898E35004A27C7 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9222898E35004A27C7 /* HomeTabViewController.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
@@ -51,6 +52,7 @@
 		66BC124328CB38E856A8DB01 /* Pods-ArtsyChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtsyChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtsyChallengeTests/Pods-ArtsyChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7950AFE28D355970B692E5E7 /* Pods_ArtsyChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtsyChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9222898E35004A27C7 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */,
 				90B37D9422898FD5004A27C7 /* UIColorExtension.swift */,
 				900B5D8B228A7FC800EE69FD /* UIImageExtension.swift */,
+				900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */,
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,

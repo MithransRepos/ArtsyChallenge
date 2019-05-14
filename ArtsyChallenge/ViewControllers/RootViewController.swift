@@ -17,15 +17,12 @@ class RootViewController: UITabBarController {
     }
     
     private func setupMenu() {
+        tabBar.backgroundColor = .white
         let homeViewController = UINavigationController(rootViewController: HomeViewController()) 
         let locationViewController = LocationViewController()
-        let homeBar = UITabBarItem(title: nil, image: Icon.home.getImage.renderOriginal(), selectedImage:Icon.homeSelected.getImage.renderOriginal())
-        let mapBar = UITabBarItem(title: nil, image: Icon.map.getImage.renderOriginal(), selectedImage:Icon.mapSelected.getImage.renderOriginal())
-        homeViewController.tabBarItem = homeBar.showOnlyImage()
-        locationViewController.tabBarItem = mapBar.showOnlyImage()
-        let tabBarList = [homeViewController, locationViewController]
-        tabBar.backgroundColor = .white
-        viewControllers = tabBarList
+        homeViewController.tabBarItem = UITabBarItem.with(icon: Icon.home)
+        locationViewController.tabBarItem = UITabBarItem.with(icon: Icon.map)
+        viewControllers = [homeViewController, locationViewController]
     }
    
 
