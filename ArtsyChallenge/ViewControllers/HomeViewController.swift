@@ -15,10 +15,12 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         setupXStripBarStyle()
         super.viewDidLoad()
         setupXStripBar()
+        setupFooterView()
     }
 
     
     private func setupXStripBarStyle(){
+        settings.style.selectedBarHeight = 2
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .black
         settings.style.buttonBarItemTitleColor = .black
@@ -29,9 +31,15 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         navigationController?.navigationBar.addSubview(buttonBarView)
     }
     
+    private func setupFooterView(){
+        let footer = UIView(frame: CGRect(x: 0, y: self.view.frame.height - 99, width: self.view.frame.width, height: 50))
+        footer.backgroundColor = .black
+        self.view.addSubview(footer)
+    }
+    
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [HomeTabViewController(), HomeTabViewController(), HomeTabViewController()]
+        return [HomeTabViewController(tittleText: "Artists"), HomeTabViewController(tittleText: "For you"), HomeTabViewController(tittleText: "Auctions")]
     }
     
     override func reloadPagerTabStripView() {

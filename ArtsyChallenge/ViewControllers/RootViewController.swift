@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RootViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -18,9 +19,12 @@ class RootViewController: UITabBarController {
     private func setupMenu() {
         let homeViewController = UINavigationController(rootViewController: HomeViewController()) 
         let locationViewController = LocationViewController()
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
-        locationViewController.tabBarItem = UITabBarItem(title: "Map", image: nil, tag: 0)
+        let homeBar = UITabBarItem(title: nil, image: Icon.home.getImage.renderOriginal(), selectedImage:Icon.homeSelected.getImage.renderOriginal())
+        let mapBar = UITabBarItem(title: nil, image: Icon.map.getImage.renderOriginal(), selectedImage:Icon.mapSelected.getImage.renderOriginal())
+        homeViewController.tabBarItem = homeBar.showOnlyImage()
+        locationViewController.tabBarItem = mapBar.showOnlyImage()
         let tabBarList = [homeViewController, locationViewController]
+        tabBar.backgroundColor = .white
         viewControllers = tabBarList
     }
    
