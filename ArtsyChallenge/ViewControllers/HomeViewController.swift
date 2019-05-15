@@ -30,7 +30,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
 
     private func setupFooterView() {
-        let footer = UIView(frame: CGRect(x: 0, y: view.frame.height - 99, width: view.frame.width, height: 50))
+        let footer = UIView(frame: CGRect(x: 0, y: (view.height() - getBottomPadding()) - 99, width: view.frame.width, height: 50))
         footer.backgroundColor = .black
         view.addSubview(footer)
     }

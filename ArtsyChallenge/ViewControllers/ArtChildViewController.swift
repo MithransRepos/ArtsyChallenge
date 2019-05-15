@@ -40,7 +40,7 @@ class ArtChildViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 149, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149, right: 0)
         view.addSubview(collectionView)
     }
 }
@@ -58,15 +58,12 @@ extension ArtChildViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return 20
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
-        cell.paintingImageView.backgroundColor = UIColor.black
-        cell.priceLabel.backgroundColor = UIColor.red
-        cell.authorLabel.backgroundColor = UIColor.blue
-        cell.infoLabel.backgroundColor = UIColor.lightGray
+        cell.configCell()
         return cell
     }
 
@@ -79,14 +76,12 @@ extension ArtChildViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        return CGSize(width: view.width(), height: 50)
+        return CGSize(width: view.width(), height: 80)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArtistHeaderView.identifier, for: indexPath) as! ArtistHeaderView
-        headerView.avatarImageView.backgroundColor = UIColor.black
-        headerView.authorLabel.backgroundColor = UIColor.blue
-        headerView.infoLabel.backgroundColor = UIColor.lightGray
+        headerView.configView()
         return headerView
     }
 }

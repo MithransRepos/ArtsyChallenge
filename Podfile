@@ -7,8 +7,7 @@ target 'ArtsyChallenge' do
 
   # Pods for ArtsyChallenge
   pod 'XLPagerTabStrip'
-#  pod 'Texture'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 4.10.0'
 
   target 'ArtsyChallengeTests' do
     inherit! :search_paths

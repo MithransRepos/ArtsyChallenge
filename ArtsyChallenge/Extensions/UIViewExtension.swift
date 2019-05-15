@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 extension UIView {
     func width() -> CGFloat {
-        return bounds.width
+        return frame.size.width
     }
 
     func height() -> CGFloat {
-        return bounds.width
+        return frame.size.height
     }
 
     func anchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil,
@@ -46,5 +46,22 @@ extension UIView {
         if height != 0 {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
+    }
+    
+    func setRounded() {
+        if width() == 0 && height() == 0{
+            layoutIfNeeded()
+        }
+        frame.size.width >= frame.size.height ? setRoundedByWidth() : setRoundedByHeight()
+    }
+    
+    func setRoundedByHeight() {
+        layer.cornerRadius = frame.size.height / 2
+        layer.masksToBounds = true
+    }
+    
+    func setRoundedByWidth() {
+        layer.cornerRadius = frame.size.width / 2
+        layer.masksToBounds = true
     }
 }

@@ -37,5 +37,12 @@ class ArtistHeaderView: UICollectionReusableView {
         avatarImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 10, paddingLeft: 24, width: 60, height: 60)
         authorLabel.anchor(top: topAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 24, height: 22)
         infoLabel.anchor(top: authorLabel.bottomAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 24, height: 22)
+        
+    }
+    
+    func configView(){
+        avatarImageView.setAvatarImage(imageUrl: "https://picsum.photos/60/60")
+        authorLabel.text = "Frank Stella"
+        infoLabel.text = "4 works added"
     }
 }
