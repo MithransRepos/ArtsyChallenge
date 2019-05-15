@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  PaitingCell.swift
 //  ArtsyChallenge
 //
 //  Created by Mithran Natarajan on 5/14/19.
@@ -8,34 +8,17 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
-    let paintingImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.white
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+class PaitingCell: UICollectionViewCell {
+    
+    static let identifier = "PaintingCell"
+    
+    let paintingImageView: UIImageView = ViewHelper.getImageView()
 
-    let authorLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let authorLabel: UILabel = ViewHelper.getLabel()
 
-    let priceLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let priceLabel: UILabel = ViewHelper.getLabel()
 
-    let infoLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let infoLabel: UILabel = ViewHelper.getLabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

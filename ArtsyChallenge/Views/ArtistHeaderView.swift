@@ -1,5 +1,5 @@
 //
-//  SectionHeaderView.swift
+//  ArtistHeaderView.swift
 //  ArtsyChallenge
 //
 //  Created by Mithran Natarajan on 5/14/19.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SectionHeaderView: UICollectionReusableView {
+class ArtistHeaderView: UICollectionReusableView {
+    
+    static let identifier = "ArtistHeaderView"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,26 +21,11 @@ class SectionHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let avatarImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.white
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    let avatarImageView: UIImageView = ViewHelper.getImageView()
     
-    let authorLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let authorLabel: UILabel = ViewHelper.getLabel()
     
-    let infoLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let infoLabel: UILabel = ViewHelper.getLabel()
     
     private func addViews() {
         addSubview(avatarImageView)

@@ -18,8 +18,6 @@ class ArtChildViewController: UIViewController {
 
     var childType: ChildType = .artist
 
-    let collectionCellIdentifier: String = "collectionCell"
-    let collectionHeaderIdentifier: String = "collectionHeader"
 
     init(childType: ChildType) {
         self.childType = childType
@@ -38,8 +36,8 @@ class ArtChildViewController: UIViewController {
     private func setupCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
-        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: collectionCellIdentifier)
-        collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: collectionHeaderIdentifier)
+        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
+        collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
@@ -65,7 +63,7 @@ extension ArtChildViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
         cell.paintingImageView.backgroundColor = UIColor.black
         cell.priceLabel.backgroundColor = UIColor.red
         cell.authorLabel.backgroundColor = UIColor.blue
@@ -86,7 +84,7 @@ extension ArtChildViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: collectionHeaderIdentifier, for: indexPath) as! SectionHeaderView
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArtistHeaderView.identifier, for: indexPath) as! ArtistHeaderView
         headerView.avatarImageView.backgroundColor = UIColor.black
         headerView.authorLabel.backgroundColor = UIColor.blue
         headerView.infoLabel.backgroundColor = UIColor.lightGray
