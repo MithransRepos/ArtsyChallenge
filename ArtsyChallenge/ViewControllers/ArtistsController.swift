@@ -17,15 +17,13 @@ class ArtistsController: BaseChildViewController {
     }
 
     private func setupCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: FlowLayoutType.vertical.getLayout())
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = UIColor.white
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149, right: 0) // 99 bottom + 50 is footer height
-        view.addSubview(collectionView)
     }
 }
 

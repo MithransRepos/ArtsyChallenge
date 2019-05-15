@@ -17,7 +17,7 @@ class ForYouViewController: BaseChildViewController {
     }
 
     private func setupTableView() {
-        tableView = UITableView(frame: view.frame)
+        tableView = UITableView(frame: self.view.frame)
         tableView.register(TableCollectionViewCell.self, forCellReuseIdentifier: TableCollectionViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self

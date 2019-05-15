@@ -11,13 +11,13 @@ import XLPagerTabStrip
 
 class HomeViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
-        setupXStripBarStyle()
+        setStripBarStyle()
         super.viewDidLoad()
         setupXStripBar()
         setupFooterView()
     }
 
-    private func setupXStripBarStyle() {
+    private func setStripBarStyle() {
         settings.style.selectedBarHeight = 2
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .black
@@ -42,7 +42,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        return [ArtistsController(childType: .artist), ForYouViewController(childType: .forYou), ArtistsController(childType: .auction)]
+        return [ArtistsController(childType: .artist, isFooterVisible: false), ForYouViewController(childType: .forYou, isFooterVisible: false), ArtistsController(childType: .auction, isFooterVisible: false)]
     }
 
     override func reloadPagerTabStripView() {

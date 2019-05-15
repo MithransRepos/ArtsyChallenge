@@ -17,9 +17,12 @@ class BaseChildViewController: UIViewController {
     }
 
     var childType: ChildType = .artist
+    
+    var isFooterVisible: Bool = false
 
-    init(childType: ChildType) {
+    init(childType: ChildType, isFooterVisible: Bool) {
         self.childType = childType
+        self.isFooterVisible = isFooterVisible
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,6 +32,7 @@ class BaseChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }
 
@@ -38,3 +42,4 @@ extension BaseChildViewController: IndicatorInfoProvider {
         return indicatorItem
     }
 }
+
