@@ -22,6 +22,7 @@
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */; };
+		90D86642228BE24000A1E5C0 /* ForYouControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86641228BE24000A1E5C0 /* ForYouControllerViewController.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
 		90FFEFF322896C1D00342FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFF122896C1D00342FC0 /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		90D86641228BE24000A1E5C0 /* ForYouControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouControllerViewController.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FFEFEF22896C1D00342FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
 				90FFF05B228974FE00342FC0 /* LocationViewController.swift */,
 				900B5D9B228ADE7300EE69FD /* TestTextureController.swift */,
+				90D86641228BE24000A1E5C0 /* ForYouControllerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
 				900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */,
+				90D86642228BE24000A1E5C0 /* ForYouControllerViewController.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
 				90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */,
