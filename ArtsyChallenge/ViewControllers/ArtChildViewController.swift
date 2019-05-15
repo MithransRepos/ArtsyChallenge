@@ -34,13 +34,13 @@ class ArtChildViewController: UIViewController {
 
     private func setupCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149 , right: 0) // 99 bottom + 50 is footer height
         view.addSubview(collectionView)
     }
 }
