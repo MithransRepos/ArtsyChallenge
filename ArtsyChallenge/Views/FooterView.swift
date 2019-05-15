@@ -10,11 +10,14 @@ import UIKit
 
 class FooterView: UIView {
     
-    let footerLabel: UILabel = ViewHelper.getLabel()
-
-    override init(frame: CGRect) {
+    private let footerLabel: UILabel = ViewHelper.getLabel()
+    let text: String
+    init(frame: CGRect, text: String) {
+        self.text = text
         super.init(frame: frame)
         addViews()
+        footerLabel.text = text
+        footerLabel.textColor = .white
     }
     
     required init?(coder _: NSCoder) {
@@ -27,6 +30,6 @@ class FooterView: UIView {
     }
 
     private func addConstraints() {
-        footerLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, margin: 5)
+        footerLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor,paddingTop: 15, paddingLeft: 24, paddingBottom: 10, paddingRight:  24)
     }
 }

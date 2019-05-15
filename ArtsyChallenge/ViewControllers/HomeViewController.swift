@@ -36,14 +36,10 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     private func setupFooterView() {
         // TODO - make it seperate view
-        let footer = UIView(frame: CGRect(x: 0, y: (view.height() - getBottomPadding()) - 99, width: view.frame.width, height: 50))
+        let frame: CGRect = CGRect(x: 0, y: (view.height() - getBottomPadding()) - 99, width: view.frame.width, height: 50)
+        let footer = FooterView(frame: frame, text: "Footer Text")
         footer.backgroundColor = .black
         view.addSubview(footer)
-        let label = ViewHelper.getLabel()
-        label.text = "Footer Text"
-        label.textColor = .white
-        footer.addSubview(label)
-        label.anchor(top: footer.topAnchor, left: footer.leftAnchor, bottom: footer.bottomAnchor, right: footer.rightAnchor, paddingLeft: 24, paddingRight:  24)
     }
     
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
