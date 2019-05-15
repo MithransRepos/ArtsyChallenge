@@ -35,7 +35,6 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     private func setupFooterView() {
-        // TODO - make it seperate view
         let frame: CGRect = CGRect(x: 0, y: (view.height() - getBottomPadding()) - 99, width: view.frame.width, height: 50)
         let footer = FooterView(frame: frame, text: "Footer Text")
         footer.backgroundColor = .black
@@ -43,11 +42,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        var pages: [UIViewController] = []
-        for type in ArtChildViewController.ChildType.allCases.map({ $0 }) {
-            pages.append(ArtChildViewController(childType: type))
-        }
-        return pages
+        return [ArtistsController(childType: .artist), ForYouViewController(childType: .forYou), ArtistsController(childType: .auction)]
     }
     
     override func reloadPagerTabStripView() {

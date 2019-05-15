@@ -16,8 +16,7 @@
 		900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D94228A9AB200EE69FD /* UIViewExtension.swift */; };
 		900B5D98228A9F7000EE69FD /* ArtistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D97228A9F7000EE69FD /* ArtistHeaderView.swift */; };
 		900B5D9A228AB45000EE69FD /* PaintingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D99228AB45000EE69FD /* PaintingCell.swift */; };
-		900B5D9C228ADE7300EE69FD /* TestTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9B228ADE7300EE69FD /* TestTextureController.swift */; };
-		900B5D9E228B998800EE69FD /* ArtChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9D228B998700EE69FD /* ArtChildViewController.swift */; };
+		900B5D9E228B998800EE69FD /* ArtistsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9D228B998700EE69FD /* ArtistsController.swift */; };
 		900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
@@ -67,8 +66,7 @@
 		900B5D94228A9AB200EE69FD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		900B5D97228A9F7000EE69FD /* ArtistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistHeaderView.swift; sourceTree = "<group>"; };
 		900B5D99228AB45000EE69FD /* PaintingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCell.swift; sourceTree = "<group>"; };
-		900B5D9B228ADE7300EE69FD /* TestTextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextureController.swift; sourceTree = "<group>"; };
-		900B5D9D228B998700EE69FD /* ArtChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtChildViewController.swift; sourceTree = "<group>"; };
+		900B5D9D228B998700EE69FD /* ArtistsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsController.swift; sourceTree = "<group>"; };
 		900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtChildViewModel.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -242,11 +240,10 @@
 		90FFF0582289735F00342FC0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				900B5D9D228B998700EE69FD /* ArtChildViewController.swift */,
+				900B5D9D228B998700EE69FD /* ArtistsController.swift */,
 				90FFF0562289735300342FC0 /* RootViewController.swift */,
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
 				90FFF05B228974FE00342FC0 /* LocationViewController.swift */,
-				900B5D9B228ADE7300EE69FD /* TestTextureController.swift */,
 				90D86645228BED2E00A1E5C0 /* ForYouViewController.swift */,
 				90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */,
 			);
@@ -476,12 +473,11 @@
 				90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */,
 				90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */,
 				900B5D98228A9F7000EE69FD /* ArtistHeaderView.swift in Sources */,
-				900B5D9E228B998800EE69FD /* ArtChildViewController.swift in Sources */,
+				900B5D9E228B998800EE69FD /* ArtistsController.swift in Sources */,
 				900B5D9A228AB45000EE69FD /* PaintingCell.swift in Sources */,
 				90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */,
 				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
-				900B5D9C228ADE7300EE69FD /* TestTextureController.swift in Sources */,
 				90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

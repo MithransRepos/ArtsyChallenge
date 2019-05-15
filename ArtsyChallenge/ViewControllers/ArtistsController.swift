@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ArtChildViewController: BaseChildViewController {
-
+class ArtistsController: BaseChildViewController {
+    private var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -17,7 +18,7 @@ class ArtChildViewController: BaseChildViewController {
 
     private func setupCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
         collectionView.delegate = self
@@ -28,7 +29,7 @@ class ArtChildViewController: BaseChildViewController {
     }
 }
 
-extension ArtChildViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension ArtistsController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func numberOfSections(in _: UICollectionView) -> Int {
         return 5
     }
