@@ -36,7 +36,11 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        return [HomeChildViewController(tittleText: "Artists"), HomeChildViewController(tittleText: "For you"), HomeChildViewController(tittleText: "Auctions")]
+        var pages: [UIViewController] = []
+        for type in ArtChildViewController.ChildType.allCases.map({ $0 }) {
+            pages.append(ArtChildViewController(childType: type))
+        }
+        return pages
     }
 
     override func reloadPagerTabStripView() {

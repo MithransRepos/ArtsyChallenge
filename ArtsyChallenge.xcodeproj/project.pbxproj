@@ -14,8 +14,12 @@
 		900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */; };
 		900B5D92228A90C400EE69FD /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D91228A90C400EE69FD /* Painting.swift */; };
 		900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D94228A9AB200EE69FD /* UIViewExtension.swift */; };
+		900B5D98228A9F7000EE69FD /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D97228A9F7000EE69FD /* SectionHeaderView.swift */; };
+		900B5D9A228AB45000EE69FD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D99228AB45000EE69FD /* CollectionViewCell.swift */; };
+		900B5D9C228ADE7300EE69FD /* TestTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9B228ADE7300EE69FD /* TestTextureController.swift */; };
+		900B5D9E228B998800EE69FD /* ArtChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9D228B998700EE69FD /* ArtChildViewController.swift */; };
+		900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
-		90B37D9322898E35004A27C7 /* HomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9222898E35004A27C7 /* HomeChildViewController.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
@@ -57,8 +61,12 @@
 		900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
 		900B5D91228A90C400EE69FD /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
 		900B5D94228A9AB200EE69FD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		900B5D97228A9F7000EE69FD /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		900B5D99228AB45000EE69FD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		900B5D9B228ADE7300EE69FD /* TestTextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextureController.swift; sourceTree = "<group>"; };
+		900B5D9D228B998700EE69FD /* ArtChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtChildViewController.swift; sourceTree = "<group>"; };
+		900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtChildViewModel.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		90B37D9222898E35004A27C7 /* HomeChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildViewController.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +144,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		900B5D96228A9F3500EE69FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				900B5D97228A9F7000EE69FD /* SectionHeaderView.swift */,
+				900B5D99228AB45000EE69FD /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		90B37D8C2289856F004A27C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +168,7 @@
 		90B37D9622899A08004A27C7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +198,7 @@
 		90FFEFE722896C1C00342FC0 /* ArtsyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				900B5D96228A9F3500EE69FD /* Views */,
 				900B5D93228A90CB00EE69FD /* Model */,
 				90B37D9622899A08004A27C7 /* ViewModels */,
 				90B37D8C2289856F004A27C7 /* Extensions */,
@@ -213,10 +232,11 @@
 		90FFF0582289735F00342FC0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				900B5D9D228B998700EE69FD /* ArtChildViewController.swift */,
 				90FFF0562289735300342FC0 /* RootViewController.swift */,
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
 				90FFF05B228974FE00342FC0 /* LocationViewController.swift */,
-				90B37D9222898E35004A27C7 /* HomeChildViewController.swift */,
+				900B5D9B228ADE7300EE69FD /* TestTextureController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,10 +378,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArtsyChallenge/Pods-ArtsyChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,14 +461,18 @@
 				900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */,
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
+				900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
 				90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */,
 				90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */,
+				900B5D98228A9F7000EE69FD /* SectionHeaderView.swift in Sources */,
+				900B5D9E228B998800EE69FD /* ArtChildViewController.swift in Sources */,
+				900B5D9A228AB45000EE69FD /* CollectionViewCell.swift in Sources */,
 				90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */,
 				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
-				90B37D9322898E35004A27C7 /* HomeChildViewController.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
+				900B5D9C228ADE7300EE69FD /* TestTextureController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
