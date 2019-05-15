@@ -10,13 +10,12 @@ import Foundation
 import UIKit
 
 class ViewHelper {
-    
     static func getLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
-    
+
     static func getImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false

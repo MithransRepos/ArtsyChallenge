@@ -9,9 +9,8 @@
 import UIKit
 
 class PaitingCell: UICollectionViewCell {
-    
     static let identifier = "PaintingCell"
-    
+
     let paintingImageView: UIImageView = ViewHelper.getImageView()
 
     let authorLabel: UILabel = ViewHelper.getLabel()
@@ -32,15 +31,13 @@ class PaitingCell: UICollectionViewCell {
         addSubview(infoLabel)
         addConstraints()
     }
-    
-    
-    private func addConstraints(){
+
+    private func addConstraints() {
         paintingImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 100)
         priceLabel.anchor(top: paintingImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 5, height: 22)
         authorLabel.anchor(top: priceLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 5, height: 22)
-        infoLabel.anchor(top: authorLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor,paddingTop: 5, paddingBottom: 5)
+        infoLabel.anchor(top: authorLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingBottom: 5)
     }
-
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -18,7 +18,6 @@ class ArtChildViewController: UIViewController {
 
     var childType: ChildType = .artist
 
-
     init(childType: ChildType) {
         self.childType = childType
         super.init(nibName: nil, bundle: nil)
