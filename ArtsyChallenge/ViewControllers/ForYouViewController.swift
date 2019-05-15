@@ -1,5 +1,5 @@
 //
-//  ForYouControllerViewController.swift
+//  ForYouViewController.swift
 //  ArtsyChallenge
 //
 //  Created by Mithran Natarajan on 5/15/19.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ForYouControllerViewController: UIViewController {
+class ForYouViewController: BaseChildViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
 
+   
 
 }

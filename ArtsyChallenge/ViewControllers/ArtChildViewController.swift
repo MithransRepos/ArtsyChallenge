@@ -7,25 +7,8 @@
 //
 
 import UIKit
-import XLPagerTabStrip
 
-class ArtChildViewController: UIViewController {
-    enum ChildType: String, CaseIterable {
-        case artist = "Artists"
-        case forYou = "For you"
-        case auction = "Auctions"
-    }
-
-    var childType: ChildType = .artist
-
-    init(childType: ChildType) {
-        self.childType = childType
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class ArtChildViewController: BaseChildViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +25,6 @@ class ArtChildViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149 , right: 0) // 99 bottom + 50 is footer height
         view.addSubview(collectionView)
-    }
-}
-
-extension ArtChildViewController: IndicatorInfoProvider {
-    func indicatorInfo(for _: PagerTabStripViewController) -> IndicatorInfo {
-        let indicatorItem = IndicatorInfo(title: childType.rawValue)
-        return indicatorItem
     }
 }
 
