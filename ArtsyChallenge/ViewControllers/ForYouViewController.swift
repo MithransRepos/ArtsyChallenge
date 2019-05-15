@@ -33,13 +33,13 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let layoutType: FlowLayoutType = (indexPath.row % 2 == 0) ? .horizontal : .vertical
+        let layoutType: FlowLayoutType = indexPath.row.isEven ? .horizontal : .vertical
         let cell: TableCollectionViewCell = TableCollectionViewCell(layoutType: layoutType)
         return cell
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = (indexPath.row % 2 == 0) ? 200 : 200 * 3
+        let height = indexPath.row.isEven ? 148 : 200 * 3
         return CGFloat(height)
     }
 }

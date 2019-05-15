@@ -19,3 +19,9 @@ extension UIViewController {
         return bottomPadding
     }
 }
+
+extension Int {
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+}

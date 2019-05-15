@@ -26,6 +26,7 @@
 		90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */; };
 		90D8664A228C07C800A1E5C0 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */; };
 		90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8664B228C1E1F00A1E5C0 /* Enum.swift */; };
+		90D8664E228C2B4900A1E5C0 /* RecommendedFairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
 		90FFEFF322896C1D00342FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFF122896C1D00342FC0 /* LaunchScreen.storyboard */; };
@@ -78,6 +79,7 @@
 		90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChildViewController.swift; sourceTree = "<group>"; };
 		90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
 		90D8664B228C1E1F00A1E5C0 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedFairCell.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FFEFEF22896C1D00342FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */,
 				90D86643228BE6CD00A1E5C0 /* FooterView.swift */,
 				90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */,
+				90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
 				90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */,
 				90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */,
+				90D8664E228C2B4900A1E5C0 /* RecommendedFairCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U78Q3HGKK7;
+				DEVELOPMENT_TEAM = QRWQ2DBBTX;
 				INFOPLIST_FILE = ArtsyChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -674,7 +678,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U78Q3HGKK7;
+				DEVELOPMENT_TEAM = QRWQ2DBBTX;
 				INFOPLIST_FILE = ArtsyChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
