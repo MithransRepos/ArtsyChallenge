@@ -20,23 +20,23 @@ extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil,
                 bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil,
                 paddingTop: CGFloat = 0, paddingLeft: CGFloat = 0, paddingBottom: CGFloat = 0,
-                paddingRight: CGFloat = 0, width: CGFloat = 0, height: CGFloat = 0) {
+                paddingRight: CGFloat = 0, width: CGFloat = 0, height: CGFloat = 0, margin: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
-
+        
         if let top = top {
-            topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+            topAnchor.constraint(equalTo: top, constant: margin > 0 ? margin : paddingTop).isActive = true
         }
 
         if let left = left {
-            leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+            leftAnchor.constraint(equalTo: left, constant: margin > 0 ? margin :paddingLeft).isActive = true
         }
 
         if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
+            bottomAnchor.constraint(equalTo: bottom, constant: margin > 0 ? margin :paddingBottom).isActive = true
         }
 
         if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+            rightAnchor.constraint(equalTo: right, constant: margin > 0 ? -margin : -paddingRight).isActive = true
         }
 
         if width != 0 {
