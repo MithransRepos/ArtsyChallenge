@@ -16,39 +16,39 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         setupXStripBar()
         setupFooterView()
     }
-    
+
     private func setupXStripBarStyle() {
         settings.style.selectedBarHeight = 2
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .black
         settings.style.buttonBarItemTitleColor = .lightGray
     }
-    
+
     private func setupXStripBar() {
         buttonBarView.removeFromSuperview()
         navigationController?.navigationBar.addSubview(buttonBarView)
-        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, _: CGFloat, changeCurrentIndex: Bool, _: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = .lightGray
             newCell?.label.textColor = .black
         }
     }
-    
+
     private func setupFooterView() {
         let frame: CGRect = CGRect(x: 0, y: (view.height() - getBottomPadding()) - 99, width: view.frame.width, height: 50)
         let footer = FooterView(frame: frame, text: "Footer Text")
         footer.backgroundColor = .black
         view.addSubview(footer)
     }
-    
+
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         return [ArtistsController(childType: .artist), ForYouViewController(childType: .forYou), ArtistsController(childType: .auction)]
     }
-    
+
     override func reloadPagerTabStripView() {
         super.reloadPagerTabStripView()
     }
-    
+
     override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
         super.configureCell(cell, indicatorInfo: indicatorInfo)
         cell.backgroundColor = .clear

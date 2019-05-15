@@ -10,7 +10,7 @@ import UIKit
 
 class ArtistsController: BaseChildViewController {
     private var collectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -24,7 +24,7 @@ class ArtistsController: BaseChildViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149 , right: 0) // 99 bottom + 50 is footer height
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: getBottomPadding() + 149, right: 0) // 99 bottom + 50 is footer height
         view.addSubview(collectionView)
     }
 }

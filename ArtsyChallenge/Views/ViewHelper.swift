@@ -21,5 +21,13 @@ class ViewHelper {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }
-    
+
+    static func getCollectionView(layoutType: FlowLayoutType) -> UICollectionView {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutType.getLayout())
+        collectionView.backgroundColor = UIColor.white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        return collectionView
+    }
 }

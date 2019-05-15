@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func getBottomPadding() -> CGFloat{
+    func getBottomPadding() -> CGFloat {
         var bottomPadding: CGFloat = 0.0
         if #available(iOS 11.0, *) {
             let window = UIApplication.shared.keyWindow

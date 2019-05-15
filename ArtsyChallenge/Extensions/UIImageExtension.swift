@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import Kingfisher
+import UIKit
 
 enum Icon: String {
     case home
@@ -27,16 +27,14 @@ extension UIImage {
     func renderOriginal() -> UIImage {
         return withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
-    
-    
 }
 
 extension UIImageView {
-    func setImage(imageUrl: String?){
-        self.kf.setImage(with: URL(string: imageUrl ?? ""))
+    func setImage(imageUrl: String?) {
+        kf.setImage(with: URL(string: imageUrl ?? ""))
     }
-    
-    func setAvatarImage(imageUrl: String?){
+
+    func setAvatarImage(imageUrl: String?) {
         setRounded()
         setImage(imageUrl: imageUrl)
     }

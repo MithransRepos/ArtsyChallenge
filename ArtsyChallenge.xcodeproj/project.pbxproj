@@ -24,6 +24,8 @@
 		90D86644228BE6CD00A1E5C0 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86643228BE6CD00A1E5C0 /* FooterView.swift */; };
 		90D86646228BED2E00A1E5C0 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86645228BED2E00A1E5C0 /* ForYouViewController.swift */; };
 		90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */; };
+		90D8664A228C07C800A1E5C0 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */; };
+		90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8664B228C1E1F00A1E5C0 /* Enum.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
 		90FFEFF322896C1D00342FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFF122896C1D00342FC0 /* LaunchScreen.storyboard */; };
@@ -74,6 +76,8 @@
 		90D86643228BE6CD00A1E5C0 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		90D86645228BED2E00A1E5C0 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChildViewController.swift; sourceTree = "<group>"; };
+		90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
+		90D8664B228C1E1F00A1E5C0 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FFEFEF22896C1D00342FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				900B5D99228AB45000EE69FD /* PaintingCell.swift */,
 				90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */,
 				90D86643228BE6CD00A1E5C0 /* FooterView.swift */,
+				90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				90FFEFEF22896C1D00342FC0 /* Assets.xcassets */,
 				90FFEFF122896C1D00342FC0 /* LaunchScreen.storyboard */,
 				90FFEFF422896C1D00342FC0 /* Info.plist */,
+				90D8664B228C1E1F00A1E5C0 /* Enum.swift */,
 			);
 			path = ArtsyChallenge;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
 				90D86644228BE6CD00A1E5C0 /* FooterView.swift in Sources */,
+				90D8664A228C07C800A1E5C0 /* TableCollectionViewCell.swift in Sources */,
 				900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
@@ -478,6 +485,7 @@
 				90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */,
 				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
+				90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */,
 				90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
