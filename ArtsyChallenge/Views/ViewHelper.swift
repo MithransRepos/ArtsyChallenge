@@ -31,7 +31,7 @@ class ViewHelper {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }
-    
+
     static func getView() -> UIView {
         let view = UIView()
         view.backgroundColor = .white

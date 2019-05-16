@@ -28,25 +28,24 @@ class ForYouViewController: BaseChildViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
-        
     }
 }
 
 extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in _: UITableView) -> Int {
         return 5
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+    func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
         return 80
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         let headerView: GenericTableViewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: GenericTableViewHeader.identifier) as! GenericTableViewHeader
         headerView.configView(title: "Recommended Art Fairs", subtitle: nil)
         return headerView
     }
-   
+
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 1
     }
@@ -61,12 +60,12 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
         let height = indexPath.section.isEven ? 148 : 200 * 3
         return CGFloat(height)
     }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+
+    func tableView(_: UITableView, heightForFooterInSection _: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+
+    func tableView(_: UITableView, viewForFooterInSection _: Int) -> UIView? {
         return nil
     }
 }
