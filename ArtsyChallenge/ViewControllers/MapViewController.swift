@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FittedSheets
 
 class MapViewController: UIViewController {
     
@@ -16,11 +17,23 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addMap()
+        addDragableView()
     }
     
     private func addMap() {
         self.view.backgroundColor = UIColor.white
         self.mapView = MKMapView(frame: self.view.frame)
         self.view.addSubview(self.mapView!)
+    }
+    
+    private func addDragableView(){
+        let sheetController = SheetViewController(controller: ArtistsController(childType: .artist, isFooterVisible: false), sizes: [.fixed(100),.fixed(300), .halfScreen, .fullScreen, .fixed(100)])
+        sheetController.dismissOnBackgroundTap = false
+        sheetController.extendBackgroundBehindHandle = true
+        sheetController.topCornersRadius = 15
+        sheetController.overlayColor = .clear
+        sheetController.pullBarView.backgroundColor = .white
+        
+        self.present(sheetController, animated: false, completion: nil)
     }
 }

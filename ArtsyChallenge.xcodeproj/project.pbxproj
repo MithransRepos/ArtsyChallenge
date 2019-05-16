@@ -25,6 +25,11 @@
 		9034629E228D9E8600A84A2B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034629D228D9E8600A84A2B /* UIFontExtension.swift */; };
 		903462A0228DE20D00A84A2B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034629F228DE20D00A84A2B /* HeadingView.swift */; };
 		903462A2228DE3EA00A84A2B /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462A1228DE3EA00A84A2B /* CollectionViewHeader.swift */; };
+		903462B8228DFB6A00A84A2B /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462B3228DFB6900A84A2B /* SheetViewController.swift */; };
+		903462B9228DFB6A00A84A2B /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462B4228DFB6900A84A2B /* Yalta.swift */; };
+		903462BA228DFB6A00A84A2B /* UIViewCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462B5228DFB6900A84A2B /* UIViewCExtension.swift */; };
+		903462BB228DFB6A00A84A2B /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462B6228DFB6A00A84A2B /* SheetSize.swift */; };
+		903462BC228DFB6A00A84A2B /* InitialTouchPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903462B7228DFB6A00A84A2B /* InitialTouchPanGestureRecognizer.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90BB4BD6228D2F1900C34426 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB4BD5228D2F1900C34426 /* ReusableView.swift */; };
@@ -86,6 +91,11 @@
 		9034629D228D9E8600A84A2B /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9034629F228DE20D00A84A2B /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		903462A1228DE3EA00A84A2B /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
+		903462B3228DFB6900A84A2B /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		903462B4228DFB6900A84A2B /* Yalta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yalta.swift; sourceTree = "<group>"; };
+		903462B5228DFB6900A84A2B /* UIViewCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCExtension.swift; sourceTree = "<group>"; };
+		903462B6228DFB6A00A84A2B /* SheetSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetSize.swift; sourceTree = "<group>"; };
+		903462B7228DFB6A00A84A2B /* InitialTouchPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTouchPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90BB4BD5228D2F1900C34426 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -212,6 +222,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		903462B2228DFB4E00A84A2B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				903462B7228DFB6A00A84A2B /* InitialTouchPanGestureRecognizer.swift */,
+				903462B6228DFB6A00A84A2B /* SheetSize.swift */,
+				903462B3228DFB6900A84A2B /* SheetViewController.swift */,
+				903462B5228DFB6900A84A2B /* UIViewCExtension.swift */,
+				903462B4228DFB6900A84A2B /* Yalta.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		90B37D8C2289856F004A27C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +281,7 @@
 		90FFEFE722896C1C00342FC0 /* ArtsyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				903462B2228DFB4E00A84A2B /* CustomViews */,
 				900B5D96228A9F3500EE69FD /* Views */,
 				90346298228D755D00A84A2B /* Cells */,
 				90346297228D74E300A84A2B /* Layout */,
@@ -444,11 +467,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArtsyChallenge/Pods-ArtsyChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FittedSheets.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
@@ -519,11 +544,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */,
+				903462BB228DFB6A00A84A2B /* SheetSize.swift in Sources */,
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
 				90D86644228BE6CD00A1E5C0 /* FooterView.swift in Sources */,
 				90D8664A228C07C800A1E5C0 /* TableCollectionViewCell.swift in Sources */,
 				900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */,
+				903462B8228DFB6A00A84A2B /* SheetViewController.swift in Sources */,
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				9034629A228D75AE00A84A2B /* AuctionCell.swift in Sources */,
 				9034629C228D886A00A84A2B /* FollowArtistCell.swift in Sources */,
@@ -531,13 +558,16 @@
 				9034629E228D9E8600A84A2B /* UIFontExtension.swift in Sources */,
 				90346295228D72F500A84A2B /* WaterfallLayout.swift in Sources */,
 				90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */,
+				903462B9228DFB6A00A84A2B /* Yalta.swift in Sources */,
 				90BB4BD6228D2F1900C34426 /* ReusableView.swift in Sources */,
 				9029C42E228D1B3600ACE327 /* TableViewHeader.swift in Sources */,
 				903462A2228DE3EA00A84A2B /* CollectionViewHeader.swift in Sources */,
 				90D86646228BED2E00A1E5C0 /* ForyouViewController.swift in Sources */,
 				90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */,
+				903462BA228DFB6A00A84A2B /* UIViewCExtension.swift in Sources */,
 				90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */,
 				903462A0228DE20D00A84A2B /* HeadingView.swift in Sources */,
+				903462BC228DFB6A00A84A2B /* InitialTouchPanGestureRecognizer.swift in Sources */,
 				900B5D98228A9F7000EE69FD /* ArtistHeaderView.swift in Sources */,
 				900B5D9E228B998800EE69FD /* ArtistsController.swift in Sources */,
 				900B5D9A228AB45000EE69FD /* PaintingCell.swift in Sources */,
