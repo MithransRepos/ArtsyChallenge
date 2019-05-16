@@ -61,7 +61,7 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = indexPath.section.isEven ? 120 : 200 * 3
+        let height = indexPath.section.isEven ? 350 : 200 * 3
         return CGFloat(height)
     }
 

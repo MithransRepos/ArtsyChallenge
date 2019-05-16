@@ -23,7 +23,7 @@ class TableCollectionViewCell: UITableViewCell {
         didSet {
             if layoutType == .horizontal { collectionView.delegate = self }
             collectionView.dataSource = self
-            registerCollectionViewCells()
+            registerViews()
         }
     }
 
@@ -54,7 +54,7 @@ class TableCollectionViewCell: UITableViewCell {
         collectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
     }
 
-    private func registerCollectionViewCells() {
+    private func registerViews() {
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
         collectionView.register(FollowArtistCell.self, forCellWithReuseIdentifier: FollowArtistCell.identifier)
@@ -68,7 +68,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if layoutType == .horizontal {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedFairCell.identifier, for: indexPath as IndexPath) as! RecommendedFairCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowArtistCell.identifier, for: indexPath as IndexPath) as! FollowArtistCell
             cell.configCell()
             return cell
         } else {
@@ -80,13 +80,13 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if layoutType == .horizontal {
-            return CGSize(width: 100, height: 100)
+            return CGSize(width: 250, height: 350)
         }
         return CGSize(width: (collectionView.width - (48 + 20)) / 2, height: 200)
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        return UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
     }
 }
 
