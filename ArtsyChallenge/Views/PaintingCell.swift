@@ -44,7 +44,7 @@ class PaitingCell: UICollectionViewCell {
     }
 
     func configCell() {
-        paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300/?blur")
+        paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300")
         paintingImageView.contentMode = .scaleToFill
         priceLabel.text = "$12000"
         authorLabel.text = "Frank Stella"

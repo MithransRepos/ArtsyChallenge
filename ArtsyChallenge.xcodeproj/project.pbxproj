@@ -167,10 +167,8 @@
 		900B5D96228A9F3500EE69FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				90346294228D72F500A84A2B /* WaterfallLayout.swift */,
 				900B5D97228A9F7000EE69FD /* ArtistHeaderView.swift */,
 				900B5D99228AB45000EE69FD /* PaintingCell.swift */,
-				90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */,
 				90D86643228BE6CD00A1E5C0 /* FooterView.swift */,
 				90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */,
 				90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */,
@@ -178,6 +176,22 @@
 				90BB4BD7228D2F5B00C34426 /* BaseTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		90346296228D74D700A84A2B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		90346297228D74E300A84A2B /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				90346294228D72F500A84A2B /* WaterfallLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		90B37D8C2289856F004A27C7 /* Extensions */ = {
@@ -226,6 +240,8 @@
 		90FFEFE722896C1C00342FC0 /* ArtsyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				90346297228D74E300A84A2B /* Layout */,
+				90346296228D74D700A84A2B /* Helper */,
 				900B5D96228A9F3500EE69FD /* Views */,
 				900B5D93228A90CB00EE69FD /* Model */,
 				90B37D9622899A08004A27C7 /* ViewModels */,
