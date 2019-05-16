@@ -9,7 +9,13 @@
 import UIKit
 
 class ForYouViewController: BaseChildViewController {
-    private var tableView: UITableView!
+    private var tableView: UITableView!{
+        didSet{
+            tableView.dataSource = self
+            tableView.delegate = self
+            registerTableViewCells()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +24,8 @@ class ForYouViewController: BaseChildViewController {
 
     private func setupTableView() {
         tableView = ViewHelper.getTableView()
-        tableView.dataSource = self
-        tableView.delegate = self
         view.addSubview(tableView)
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
-        registerTableViewCells()
     }
 
     private func registerTableViewCells() {

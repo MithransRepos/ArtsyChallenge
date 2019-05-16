@@ -9,7 +9,13 @@
 import UIKit
 
 class ArtistsController: BaseChildViewController {
-    private var collectionView: UICollectionView!
+    private var collectionView: UICollectionView!{
+        didSet{
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            registerCollectionViewCells()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +26,6 @@ class ArtistsController: BaseChildViewController {
         collectionView = ViewHelper.getCollectionView(layoutType: .vertical)
         view.addSubview(collectionView)
         collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        registerCollectionViewCells()
     }
 
     private func registerCollectionViewCells() {

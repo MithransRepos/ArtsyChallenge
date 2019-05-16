@@ -13,7 +13,13 @@ class TableCollectionViewCell: UITableViewCell {
 
     private var layoutType: FlowLayoutType = .vertical
 
-    private var collectionView: UICollectionView!
+    private var collectionView: UICollectionView!{
+        didSet{
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            registerCollectionViewCells()
+        }
+    }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -34,9 +40,6 @@ class TableCollectionViewCell: UITableViewCell {
         collectionView.isScrollEnabled = layoutType == .horizontal
         addSubview(collectionView)
         collectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        registerCollectionViewCells()
     }
 
     private func registerCollectionViewCells() {
