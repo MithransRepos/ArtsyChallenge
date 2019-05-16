@@ -17,7 +17,7 @@ class ArtistsController: BaseChildViewController {
             collectionView.dataSource = self
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = WaterfallLayout()
@@ -38,23 +38,23 @@ extension ArtistsController: UICollectionViewDataSource {
     func numberOfSections(in _: UICollectionView) -> Int {
         return 2
     }
-    
+
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return 5
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 && childType == .auction{
+        if indexPath.section == 0, childType == .auction {
             let cell: AuctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AuctionCell.identifier, for: indexPath) as! AuctionCell
             cell.configCell()
             return cell
-        }else{
+        } else {
             let cell: PaitingCell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath) as! PaitingCell
             cell.configCell()
             return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
@@ -69,14 +69,14 @@ extension ArtistsController: UICollectionViewDataSource {
 
 extension ArtistsController: WaterfallLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 && childType == .auction{
+        if indexPath.section == 0, childType == .auction {
             return CGSize(width: 200, height: 200)
         }
         return CGSize(width: 200, height: indexPath.row.isEven ? 200 : 300)
     }
-    
+
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
-        if section == 0 && childType == .auction{
+        if section == 0, childType == .auction {
             return .flow(column: 2)
         }
         return .waterfall(column: 2, distributionMethod: .balanced)
