@@ -24,8 +24,8 @@ class ForYouViewController: BaseChildViewController {
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
         registerTableViewCells()
     }
-    
-    private func registerTableViewCells(){
+
+    private func registerTableViewCells() {
         tableView.register(TableCollectionViewCell.self, forCellReuseIdentifier: TableCollectionViewCell.identifier)
         tableView.register(GenericTableViewHeader.self, forHeaderFooterViewReuseIdentifier: GenericTableViewHeader.identifier)
     }

@@ -24,8 +24,8 @@ class ArtistsController: BaseChildViewController {
         collectionView.dataSource = self
         registerCollectionViewCells()
     }
-    
-    private func registerCollectionViewCells(){
+
+    private func registerCollectionViewCells() {
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class TableCollectionViewCell: UITableViewCell {
     static let identifier = "TableCollectionViewCell"
-    
+
     private var layoutType: FlowLayoutType = .vertical
 
     private var collectionView: UICollectionView!
@@ -38,8 +38,8 @@ class TableCollectionViewCell: UITableViewCell {
         collectionView.dataSource = self
         registerCollectionViewCells()
     }
-    
-    private func registerCollectionViewCells(){
+
+    private func registerCollectionViewCells() {
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
     }
