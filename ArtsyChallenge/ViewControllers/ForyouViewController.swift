@@ -30,7 +30,7 @@ class ForyouViewController: BaseChildViewController {
 
     private func registerTableViewCells() {
         tableView.register(TableCollectionViewCell.self, forCellReuseIdentifier: TableCollectionViewCell.identifier)
-        tableView.register(GenericTableViewHeader.self, forHeaderFooterViewReuseIdentifier: GenericTableViewHeader.identifier)
+        tableView.register(TableViewHeader.self, forHeaderFooterViewReuseIdentifier: TableViewHeader.identifier)
     }
 }
 
@@ -44,7 +44,7 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
-        let headerView: GenericTableViewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: GenericTableViewHeader.identifier) as! GenericTableViewHeader
+        let headerView: TableViewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: TableViewHeader.identifier) as! TableViewHeader
         headerView.configView(title: "Recommended Art Fairs")
         headerView.backgroundColor = .red
         return headerView

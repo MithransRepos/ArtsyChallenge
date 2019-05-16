@@ -11,15 +11,17 @@ import UIKit
 class ArtistsController: BaseChildViewController {
     private var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
-            collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
-            collectionView.register(AuctionCell.self, forCellWithReuseIdentifier: AuctionCell.identifier)
             collectionView.dataSource = self
+            registerViews()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView(){
         let layout = ViewHelper.getWaterFallLayout()
         layout.headerHeight = 80.0
         layout.delegate = self
@@ -27,6 +29,13 @@ class ArtistsController: BaseChildViewController {
         collectionView.backgroundColor = .white
         view.addSubview(collectionView)
         collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
+    }
+    
+    private func registerViews(){
+        collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
+        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
+        collectionView.register(AuctionCell.self, forCellWithReuseIdentifier: AuctionCell.identifier)
+        collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)
     }
 }
 
@@ -55,9 +64,15 @@ extension ArtistsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
+            if self.childType == .auction{
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
+                header.configView(title: "Current Live Auctions")
+                return header
+            }else{
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArtistHeaderView.identifier, for: indexPath) as! ArtistHeaderView
             header.configView()
             return header
+            }
         default:
             return UICollectionReusableView()
         }
@@ -80,6 +95,7 @@ extension ArtistsController: WaterfallLayoutDelegate {
     }
 
     func collectionView(_: UICollectionView, layout _: WaterfallLayout, headerHeightFor _: Int) -> CGFloat? {
+        if childType == .auction { return 50 }
         return 65
     }
 }
