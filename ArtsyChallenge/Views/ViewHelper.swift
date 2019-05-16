@@ -31,6 +31,14 @@ class ViewHelper {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }
+    
+    static func getTableView() -> UITableView {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.separatorColor = .clear
+        tableView.backgroundColor = .white
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }
 
     static func getView() -> UIView {
         let view = UIView()

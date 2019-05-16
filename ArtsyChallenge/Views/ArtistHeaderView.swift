@@ -20,11 +20,11 @@ class ArtistHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let avatarImageView: UIImageView = ViewHelper.getImageView()
+    private let avatarImageView: UIImageView = ViewHelper.getImageView()
 
-    let authorLabel: UILabel = ViewHelper.getLabel()
+    private let authorLabel: UILabel = ViewHelper.getLabel()
 
-    let infoLabel: UILabel = ViewHelper.getLabel()
+    private let infoLabel: UILabel = ViewHelper.getLabel()
 
     private func addViews() {
         addSubview(avatarImageView)

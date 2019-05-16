@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 extension UIView {
-    func width() -> CGFloat {
+    var width: CGFloat {
         return frame.size.width
     }
 
-    func height() -> CGFloat {
+    var height: CGFloat {
         return frame.size.height
     }
 
@@ -49,7 +49,7 @@ extension UIView {
     }
 
     func setRounded() {
-        if width() == 0, height() == 0 {
+        if width == 0, height == 0 {
             layoutIfNeeded()
         }
         frame.size.width >= frame.size.height ? setRoundedByWidth() : setRoundedByHeight()

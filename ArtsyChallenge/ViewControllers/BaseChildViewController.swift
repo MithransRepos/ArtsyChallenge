@@ -16,7 +16,7 @@ class BaseChildViewController: UIViewController {
         case auction = "Auctions"
     }
 
-    var childType: ChildType = .artist
+    private var childType: ChildType = .artist
 
     var isFooterVisible: Bool = false
 

@@ -10,9 +10,10 @@ import UIKit
 
 class TableCollectionViewCell: UITableViewCell {
     static let identifier = "TableCollectionViewCell"
-    var layoutType: FlowLayoutType = .vertical
+    
+    private var layoutType: FlowLayoutType = .vertical
 
-    var collectionView: UICollectionView!
+    private var collectionView: UICollectionView!
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,13 +29,17 @@ class TableCollectionViewCell: UITableViewCell {
         super.layoutSubviews()
     }
 
-    func setupView() {
+    private func setupView() {
         collectionView = ViewHelper.getCollectionView(layoutType: layoutType)
         collectionView.isScrollEnabled = layoutType == .horizontal
         addSubview(collectionView)
         collectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
         collectionView.delegate = self
         collectionView.dataSource = self
+        registerCollectionViewCells()
+    }
+    
+    private func registerCollectionViewCells(){
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
     }
@@ -61,7 +66,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
         if layoutType == .horizontal {
             return CGSize(width: 100, height: 100)
         }
-        return CGSize(width: (collectionView.width() - (48 + 20)) / 2, height: 200)
+        return CGSize(width: (collectionView.width - (48 + 20)) / 2, height: 200)
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {

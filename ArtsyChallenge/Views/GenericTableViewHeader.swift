@@ -20,9 +20,9 @@ class GenericTableViewHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let titleLabel: UILabel = ViewHelper.getLabel()
+    private let titleLabel: UILabel = ViewHelper.getLabel()
 
-    let subTitleLabel: UILabel = ViewHelper.getLabel()
+    private let subTitleLabel: UILabel = ViewHelper.getLabel()
 
     private func addViews() {
         addSubview(titleLabel)

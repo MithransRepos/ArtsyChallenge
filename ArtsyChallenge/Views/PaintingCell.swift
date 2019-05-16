@@ -11,13 +11,13 @@ import UIKit
 class PaitingCell: UICollectionViewCell {
     static let identifier = "PaintingCell"
 
-    let paintingImageView: UIImageView = ViewHelper.getImageView()
+    private let paintingImageView: UIImageView = ViewHelper.getImageView()
 
-    let authorLabel: UILabel = ViewHelper.getLabel()
+    private let authorLabel: UILabel = ViewHelper.getLabel()
 
-    let priceLabel: UILabel = ViewHelper.getLabel()
+    private let priceLabel: UILabel = ViewHelper.getLabel()
 
-    let infoLabel: UILabel = ViewHelper.getLabel()
+    private let infoLabel: UILabel = ViewHelper.getLabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

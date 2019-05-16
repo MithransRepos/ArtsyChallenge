@@ -10,7 +10,7 @@ import UIKit
 
 class FooterView: UIView {
     private let footerLabel: UILabel = ViewHelper.getLabel()
-    let text: String
+    private let text: String
 
     init(frame: CGRect, text: String) {
         self.text = text

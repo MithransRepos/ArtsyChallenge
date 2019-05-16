@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func getBottomPadding() -> CGFloat {
         var bottomPadding: CGFloat = 0.0
         if #available(iOS 11.0, *) {
@@ -17,6 +18,10 @@ extension UIViewController {
             bottomPadding = window?.safeAreaInsets.bottom ?? 0.0
         }
         return bottomPadding
+    }
+    
+    var bottomHeightWithMenu: CGFloat {
+        return getBottomPadding() + 99 // menu height
     }
 }
 

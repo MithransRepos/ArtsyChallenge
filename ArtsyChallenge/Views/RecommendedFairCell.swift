@@ -11,7 +11,7 @@ import UIKit
 class RecommendedFairCell: UICollectionViewCell {
     static let identifier = "RecommendedFairCell"
 
-    let fairImageView: UIImageView = ViewHelper.getImageView()
+    private let fairImageView: UIImageView = ViewHelper.getImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

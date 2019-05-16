@@ -17,14 +17,17 @@ class ArtistsController: BaseChildViewController {
     }
 
     private func setupCollectionView() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: FlowLayoutType.vertical.getLayout())
+        collectionView = ViewHelper.getCollectionView(layoutType: .vertical)
         view.addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.white
-        collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -99 : 0)
-        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
-        collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
+        collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
         collectionView.delegate = self
         collectionView.dataSource = self
+        registerCollectionViewCells()
+    }
+    
+    private func registerCollectionViewCells(){
+        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
+        collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
     }
 }
 
@@ -44,7 +47,7 @@ extension ArtistsController: UICollectionViewDataSource, UICollectionViewDelegat
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.width() - (48 + 20)) / 2, height: 200)
+        return CGSize(width: (collectionView.width - (48 + 20)) / 2, height: 200)
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
@@ -52,7 +55,7 @@ extension ArtistsController: UICollectionViewDataSource, UICollectionViewDelegat
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        return CGSize(width: view.width(), height: 80)
+        return CGSize(width: view.width, height: 80)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
