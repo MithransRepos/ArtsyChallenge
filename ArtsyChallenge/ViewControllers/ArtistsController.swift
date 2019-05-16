@@ -9,8 +9,8 @@
 import UIKit
 
 class ArtistsController: BaseChildViewController {
-    private var collectionView: UICollectionView!{
-        didSet{
+    private var collectionView: UICollectionView! {
+        didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
             registerCollectionViewCells()

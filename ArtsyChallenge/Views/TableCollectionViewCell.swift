@@ -13,8 +13,8 @@ class TableCollectionViewCell: UITableViewCell {
 
     private var layoutType: FlowLayoutType = .vertical
 
-    private var collectionView: UICollectionView!{
-        didSet{
+    private var collectionView: UICollectionView! {
+        didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
             registerCollectionViewCells()

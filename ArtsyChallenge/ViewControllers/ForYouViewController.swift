@@ -9,8 +9,8 @@
 import UIKit
 
 class ForYouViewController: BaseChildViewController {
-    private var tableView: UITableView!{
-        didSet{
+    private var tableView: UITableView! {
+        didSet {
             tableView.dataSource = self
             tableView.delegate = self
             registerTableViewCells()
