@@ -14,6 +14,8 @@ class ArtistHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
+        addConstraints()
+        setStyle()
     }
 
     required init?(coder _: NSCoder) {
@@ -30,18 +32,23 @@ class ArtistHeaderView: UICollectionReusableView {
         addSubview(avatarImageView)
         addSubview(authorLabel)
         addSubview(infoLabel)
-        addConstraints()
     }
 
     private func addConstraints() {
-        avatarImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 10, paddingLeft: 24, width: 60, height: 60)
-        authorLabel.anchor(top: topAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 24, height: 22)
-        infoLabel.anchor(top: authorLabel.bottomAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 24, height: 22)
+        avatarImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 20, paddingLeft: 20, width: 45, height: 45)
+        authorLabel.anchor(top: topAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 25, paddingLeft: 10, paddingRight: 24)
+        infoLabel.anchor(top: authorLabel.bottomAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 10, paddingRight: 24, height: 22)
     }
 
+    private func setStyle(){
+        authorLabel.font = UIFont.arial(ofSize: 14, type: .bold)
+        infoLabel.font = UIFont.baskerville(ofSize: 14)
+        infoLabel.textColor = .gray
+    }
+    
     func configView() {
         avatarImageView.setAvatarImage(imageUrl: "https://picsum.photos/60/60")
-        authorLabel.text = "Frank Stella"
+        authorLabel.text = "PABLO PICASSO".uppercased()
         infoLabel.text = "4 works added"
     }
 }

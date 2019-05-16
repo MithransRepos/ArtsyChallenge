@@ -22,9 +22,9 @@ class ArtistsController: BaseChildViewController {
         super.viewDidLoad()
         let layout = WaterfallLayout()
         layout.delegate = self
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
-        layout.minimumLineSpacing = 10.0
-        layout.minimumInteritemSpacing = 10.0
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
+        layout.minimumLineSpacing = 20.0
+        layout.minimumInteritemSpacing = 20.0
         layout.headerHeight = 80.0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
@@ -72,7 +72,7 @@ extension ArtistsController: WaterfallLayoutDelegate {
         if indexPath.section == 0, childType == .auction {
             return CGSize(width: 200, height: 200)
         }
-        return CGSize(width: 200, height: indexPath.row.isEven ? 200 : 300)
+        return CGSize(width: 200, height: indexPath.row.isEven ? 350 : 450)
     }
 
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
@@ -80,5 +80,9 @@ extension ArtistsController: WaterfallLayoutDelegate {
             return .flow(column: 2)
         }
         return .waterfall(column: 2, distributionMethod: .balanced)
+    }
+    
+    func collectionView(_: UICollectionView, layout _: WaterfallLayout, headerHeightFor _: Int) -> CGFloat? {
+        return 65
     }
 }

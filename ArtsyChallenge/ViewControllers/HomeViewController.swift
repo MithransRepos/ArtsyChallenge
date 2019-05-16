@@ -21,7 +21,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         settings.style.selectedBarHeight = 2
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .black
-        settings.style.buttonBarItemFont = UIFont.arialRegular(ofSize: 14, type: .regular)
+        settings.style.buttonBarItemFont = UIFont.arial(ofSize: 14, type: .regular)
         settings.style.buttonBarItemTitleColor = .lightGray
     }
 
