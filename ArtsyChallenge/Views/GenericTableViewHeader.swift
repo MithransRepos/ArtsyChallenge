@@ -11,31 +11,37 @@ import UIKit
 class GenericTableViewHeader: UITableViewHeaderFooterView {
     static let identifier = "GenericTableViewHeader"
 
+    private let titleLabel: UILabel = ViewHelper.getLabel()
+
+    private let subTitleLabel: UILabel = ViewHelper.getLabel()
+
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         addViews()
+        addConstraints()
+        setStyles()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private let titleLabel: UILabel = ViewHelper.getLabel()
-
-    private let subTitleLabel: UILabel = ViewHelper.getLabel()
-
     private func addViews() {
         addSubview(titleLabel)
         addSubview(subTitleLabel)
-        addConstraints()
     }
 
     private func addConstraints() {
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 24, paddingRight: 24, height: 30)
-        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 24, paddingRight: 24, height: 20)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 20, paddingRight: 20)
+        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
     }
 
-    func configView(title: String, subtitle: String?) {
+    private func setStyles() {
+        titleLabel.font = UIFont.baskerville(ofSize: 30)
+        subTitleLabel.font = UIFont.baskerville(ofSize: 20)
+    }
+
+    func configView(title: String, subtitle: String? = nil) {
         titleLabel.text = title
         subTitleLabel.text = subtitle
     }

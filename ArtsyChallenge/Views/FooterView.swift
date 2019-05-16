@@ -30,17 +30,17 @@ class FooterView: UIView {
     }
 
     private func addConstraints() {
-        footerLabel.anchor( left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20 )
+        footerLabel.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
         footerLabel.alignVertical()
     }
 
     private func setStyle() {
         footerLabel.textColor = .white
         footerLabel.font = UIFont.baskerville(ofSize: 16)
-        self.backgroundColor = .black
+        backgroundColor = .black
     }
-    
-    private func setText(){
+
+    private func setText() {
         footerLabel.text = text
     }
 }

@@ -11,28 +11,42 @@ import UIKit
 class RecommendedFairCell: UICollectionViewCell {
     static let identifier = "RecommendedFairCell"
 
-    private let fairImageView: UIImageView = ViewHelper.getImageView()
+    private let view: UIView = ViewHelper.getView()
+    
+    private let label: UILabel = ViewHelper.getLabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
-    }
-
-    private func addViews() {
-        addSubview(fairImageView)
         addConstraints()
+        setStyles()
     }
-
-    private func addConstraints() {
-        fairImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, width: 100, height: 100)
-    }
-
+    
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func addViews() {
+        addSubview(view)
+        addSubview(label)
+    }
+
+    private func addConstraints() {
+        view.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingBottom: 10, width: 80, height: 80)
+        
+    }
+
+    private func setStyles(){
+        label.numberOfLines = 2
+        label.font = UIFont.baskerville(ofSize: 16)
+        view.backgroundColor = .random
+        view.setRounded()
+        label.alignCenter()
+    }
+    
+
     func configCell() {
-        fairImageView.setRounded()
-        fairImageView.setImage(imageUrl: "https://picsum.photos/200/300/?blur")
+        label.text = "PHOTO \n LONDON"
+        
     }
 }

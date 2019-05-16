@@ -40,12 +40,13 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-        return 80
+        return 50
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         let headerView: GenericTableViewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: GenericTableViewHeader.identifier) as! GenericTableViewHeader
-        headerView.configView(title: "Recommended Art Fairs", subtitle: nil)
+        headerView.configView(title: "Recommended Art Fairs")
+        headerView.backgroundColor = .red
         return headerView
     }
 
@@ -60,7 +61,7 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = indexPath.section.isEven ? 148 : 200 * 3
+        let height = indexPath.section.isEven ? 120 : 200 * 3
         return CGFloat(height)
     }
 
