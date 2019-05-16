@@ -20,3 +20,9 @@ enum FlowLayoutType {
         return layout
     }
 }
+
+enum FontType: String {
+    case regular = ""
+    case bold = "-Bold"
+    case light = "-Light"
+}

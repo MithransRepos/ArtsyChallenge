@@ -22,6 +22,7 @@
 		90346295228D72F500A84A2B /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90346294228D72F500A84A2B /* WaterfallLayout.swift */; };
 		9034629A228D75AE00A84A2B /* AuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90346299228D75AE00A84A2B /* AuctionCell.swift */; };
 		9034629C228D886A00A84A2B /* FollowArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034629B228D886A00A84A2B /* FollowArtistCell.swift */; };
+		9034629E228D9E8600A84A2B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034629D228D9E8600A84A2B /* UIFontExtension.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90BB4BD6228D2F1900C34426 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB4BD5228D2F1900C34426 /* ReusableView.swift */; };
@@ -81,6 +82,7 @@
 		90346294228D72F500A84A2B /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		90346299228D75AE00A84A2B /* AuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCell.swift; sourceTree = "<group>"; };
 		9034629B228D886A00A84A2B /* FollowArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowArtistCell.swift; sourceTree = "<group>"; };
+		9034629D228D9E8600A84A2B /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90BB4BD5228D2F1900C34426 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				900B5D8F228A8B0C00EE69FD /* UITabBarItemExtension.swift */,
 				900B5D94228A9AB200EE69FD /* UIViewExtension.swift */,
 				90BB4BD5228D2F1900C34426 /* ReusableView.swift */,
+				9034629D228D9E8600A84A2B /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				9034629A228D75AE00A84A2B /* AuctionCell.swift in Sources */,
 				9034629C228D886A00A84A2B /* FollowArtistCell.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
+				9034629E228D9E8600A84A2B /* UIFontExtension.swift in Sources */,
 				90346295228D72F500A84A2B /* WaterfallLayout.swift in Sources */,
 				90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */,
 				90BB4BD6228D2F1900C34426 /* ReusableView.swift in Sources */,
