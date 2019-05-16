@@ -20,12 +20,9 @@ class ArtistsController: BaseChildViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layout = WaterfallLayout()
-        layout.delegate = self
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
-        layout.minimumLineSpacing = 20.0
-        layout.minimumInteritemSpacing = 20.0
+        let layout = ViewHelper.getWaterFallLayout()
         layout.headerHeight = 80.0
+        layout.delegate = self
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         view.addSubview(collectionView)

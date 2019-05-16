@@ -32,6 +32,15 @@ class ViewHelper {
         return collectionView
     }
 
+    static func getCollectionView(layout: WaterfallLayout) -> UICollectionView {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        return collectionView
+    }
+
     static func getTableView() -> UITableView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorColor = .clear
@@ -52,5 +61,13 @@ class ViewHelper {
         button.backgroundColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }
+
+    static func getWaterFallLayout() -> WaterfallLayout {
+        let layout = WaterfallLayout()
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
+        layout.minimumLineSpacing = 20.0
+        layout.minimumInteritemSpacing = 20.0
+        return layout
     }
 }

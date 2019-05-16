@@ -13,9 +13,15 @@ class TableCollectionViewCell: UITableViewCell {
 
     private var layoutType: FlowLayoutType = .vertical
 
+    private var waterFallLayout: WaterfallLayout? {
+        didSet {
+            waterFallLayout?.delegate = self
+        }
+    }
+
     private var collectionView: UICollectionView! {
         didSet {
-            collectionView.delegate = self
+            if layoutType == .horizontal { collectionView.delegate = self }
             collectionView.dataSource = self
             registerCollectionViewCells()
         }
@@ -36,7 +42,13 @@ class TableCollectionViewCell: UITableViewCell {
     }
 
     private func setupView() {
-        collectionView = ViewHelper.getCollectionView(layoutType: layoutType)
+        if layoutType == .vertical {
+            let layout = ViewHelper.getWaterFallLayout()
+            waterFallLayout = layout
+            collectionView = ViewHelper.getCollectionView(layout: layout)
+        } else {
+            collectionView = ViewHelper.getCollectionView(layoutType: layoutType)
+        }
         collectionView.isScrollEnabled = layoutType == .horizontal
         addSubview(collectionView)
         collectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
@@ -75,5 +87,15 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+    }
+}
+
+extension TableCollectionViewCell: WaterfallLayoutDelegate {
+    func collectionViewLayout(for _: Int) -> WaterfallLayout.Layout {
+        return .waterfall(column: 2, distributionMethod: .balanced)
+    }
+
+    func collectionView(_: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: indexPath.row.isEven ? 250 : 350)
     }
 }

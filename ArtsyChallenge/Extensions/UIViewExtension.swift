@@ -16,8 +16,8 @@ extension UIView {
     var height: CGFloat {
         return frame.size.height
     }
-    
-    func alignCenter(){
+
+    func alignCenter() {
         alignVertical()
         alignHorizontal()
     }
