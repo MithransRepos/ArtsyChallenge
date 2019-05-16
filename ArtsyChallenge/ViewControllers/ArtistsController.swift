@@ -7,34 +7,33 @@
 //
 
 import UIKit
+// import WaterfallLayout
 
 class ArtistsController: BaseChildViewController {
     private var collectionView: UICollectionView! {
         didSet {
-            collectionView.delegate = self
+            collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
+            collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
             collectionView.dataSource = self
-            registerCollectionViewCells()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-    }
-
-    private func setupCollectionView() {
-        collectionView = ViewHelper.getCollectionView(layoutType: .vertical)
+        let layout = WaterfallLayout()
+        layout.delegate = self
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        layout.minimumLineSpacing = 10.0
+        layout.minimumInteritemSpacing = 10.0
+        layout.headerHeight = 80.0
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
         view.addSubview(collectionView)
         collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -bottomHeightWithMenu : 0)
     }
-
-    private func registerCollectionViewCells() {
-        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
-        collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
-    }
 }
 
-extension ArtistsController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension ArtistsController: UICollectionViewDataSource {
     func numberOfSections(in _: UICollectionView) -> Int {
         return 5
     }
@@ -44,26 +43,29 @@ extension ArtistsController: UICollectionViewDataSource, UICollectionViewDelegat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
+        let cell: PaitingCell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath) as! PaitingCell
         cell.configCell()
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.width - (48 + 20)) / 2, height: 200)
-    }
-
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
-    }
-
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        return CGSize(width: view.width, height: 80)
-    }
-
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArtistHeaderView.identifier, for: indexPath) as! ArtistHeaderView
-        headerView.configView()
-        return headerView
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArtistHeaderView.identifier, for: indexPath) as! ArtistHeaderView
+            header.configView()
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
+}
+
+extension ArtistsController: WaterfallLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: indexPath.row.isEven ? 200 : 300)
+    }
+
+    func collectionViewLayout(for _: Int) -> WaterfallLayout.Layout {
+        return .waterfall(column: 2, distributionMethod: .balanced)
     }
 }

@@ -1,0 +1,11 @@
+framework module WaterfallLayout {
+  umbrella header "WaterfallLayout.h"
+
+  export *
+  module * { export * }
+}
+
+module WaterfallLayout.Swift {
+    header "WaterfallLayout-Swift.h"
+    requires objc
+}

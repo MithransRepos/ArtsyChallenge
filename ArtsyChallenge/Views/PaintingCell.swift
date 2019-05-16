@@ -33,7 +33,7 @@ class PaitingCell: UICollectionViewCell {
     }
 
     private func addConstraints() {
-        paintingImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 100)
+        paintingImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor)
         priceLabel.anchor(top: paintingImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 5, height: 22)
         authorLabel.anchor(top: priceLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 5, height: 22)
         infoLabel.anchor(top: authorLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingBottom: 5)
