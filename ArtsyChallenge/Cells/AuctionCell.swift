@@ -11,6 +11,7 @@ import UIKit
 class AuctionCell: UICollectionViewCell {
     static let identifier = "AuctionCell"
 
+    
     private let paintingImageView: UIImageView = ViewHelper.getImageView()
 
     private let authorLabel: UILabel = ViewHelper.getLabel()
@@ -22,6 +23,8 @@ class AuctionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
+        addConstraints()
+        setStyle()
     }
 
     private func addViews() {
@@ -29,8 +32,6 @@ class AuctionCell: UICollectionViewCell {
         addSubview(authorLabel)
         addSubview(liveLabel)
         addSubview(infoLabel)
-        addConstraints()
-        setStyle()
     }
 
     private func setStyle() {
@@ -39,14 +40,17 @@ class AuctionCell: UICollectionViewCell {
         infoLabel.textColor = .white
         liveLabel.textColor = .black
         liveLabel.textAlignment = .center
-        liveLabel.font = UIFont.boldSystemFont(ofSize: 9)
+        liveLabel.font = UIFont.arial(ofSize: 9).bold
+        authorLabel.font = UIFont.baskerville(ofSize: 16)
+        infoLabel.font = UIFont.arial(ofSize: 12)
+        authorLabel.backgroundColor = .transparentBlack
     }
 
     private func addConstraints() {
-        paintingImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 200)
-        liveLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 5, width: 30, height: 10)
-        authorLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 5, paddingLeft: 5, paddingRight: 5)
-        infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, paddingLeft: 5, paddingBottom: -5)
+        paintingImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 250)
+        liveLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 5, width: 30, height: 15)
+        authorLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 5)
+        infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, paddingLeft: 10, paddingBottom: -5)
     }
 
     required init?(coder _: NSCoder) {
@@ -56,7 +60,7 @@ class AuctionCell: UICollectionViewCell {
     func configCell() {
         paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300")
         authorLabel.text = "Frank Stella"
-        infoLabel.text = "LIVE IN 2H"
+        infoLabel.text = "LIVE NOW"
         liveLabel.text = "LIVE"
     }
 }

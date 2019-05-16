@@ -67,7 +67,7 @@ extension ArtistsController: UICollectionViewDataSource {
 extension ArtistsController: WaterfallLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0, childType == .auction {
-            return CGSize(width: 200, height: 200)
+            return CGSize(width: 200, height: 250)
         }
         return CGSize(width: 200, height: indexPath.row.isEven ? 250 : 350)
     }
