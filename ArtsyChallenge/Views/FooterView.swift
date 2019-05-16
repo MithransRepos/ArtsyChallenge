@@ -16,6 +16,8 @@ class FooterView: UIView {
         self.text = text
         super.init(frame: frame)
         addViews()
+        addConstraints()
+        setStyle()
     }
 
     required init?(coder _: NSCoder) {
@@ -24,8 +26,6 @@ class FooterView: UIView {
 
     private func addViews() {
         addSubview(footerLabel)
-        addConstraints()
-        setStyle()
     }
 
     private func addConstraints() {
