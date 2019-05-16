@@ -17,7 +17,7 @@ class RootViewController: UITabBarController {
     private func setupMenu() {
         tabBar.backgroundColor = .white
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
-        let locationViewController = LocationViewController()
+        let locationViewController = MapViewController()
         homeViewController.tabBarItem = UITabBarItem.with(icon: Icon.home)
         locationViewController.tabBarItem = UITabBarItem.with(icon: Icon.map)
         viewControllers = [homeViewController, locationViewController]

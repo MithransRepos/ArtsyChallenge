@@ -42,7 +42,7 @@
 		90FFF00922896C1D00342FC0 /* ArtsyChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFF00822896C1D00342FC0 /* ArtsyChallengeUITests.swift */; };
 		90FFF0572289735300342FC0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFF0562289735300342FC0 /* RootViewController.swift */; };
 		90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFF059228974D600342FC0 /* HomeViewController.swift */; };
-		90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFF05B228974FE00342FC0 /* LocationViewController.swift */; };
+		90FFF05C228974FE00342FC0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFF05B228974FE00342FC0 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +109,7 @@
 		90FFF00A22896C1D00342FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90FFF0562289735300342FC0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		90FFF059228974D600342FC0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		90FFF05B228974FE00342FC0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		90FFF05B228974FE00342FC0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D2799E3B92D1B27668E9F4F0 /* Pods-ArtsyChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtsyChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtsyChallenge/Pods-ArtsyChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,7 +301,7 @@
 				90D86645228BED2E00A1E5C0 /* ForyouViewController.swift */,
 				90FFF0562289735300342FC0 /* RootViewController.swift */,
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
-				90FFF05B228974FE00342FC0 /* LocationViewController.swift */,
+				90FFF05B228974FE00342FC0 /* MapViewController.swift */,
 				90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */,
 			);
 			path = ViewControllers;
@@ -541,7 +541,7 @@
 				900B5D98228A9F7000EE69FD /* ArtistHeaderView.swift in Sources */,
 				900B5D9E228B998800EE69FD /* ArtistsController.swift in Sources */,
 				900B5D9A228AB45000EE69FD /* PaintingCell.swift in Sources */,
-				90FFF05C228974FE00342FC0 /* LocationViewController.swift in Sources */,
+				90FFF05C228974FE00342FC0 /* MapViewController.swift in Sources */,
 				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
 				90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */,
