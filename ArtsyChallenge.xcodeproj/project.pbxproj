@@ -172,7 +172,6 @@
 				900B5D97228A9F7000EE69FD /* ArtistHeaderView.swift */,
 				90D86643228BE6CD00A1E5C0 /* FooterView.swift */,
 				9029C42D228D1B3600ACE327 /* GenericTableViewHeader.swift */,
-				90BB4BD7228D2F5B00C34426 /* BaseTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		90346298228D755D00A84A2B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				90BB4BD7228D2F5B00C34426 /* BaseTableViewCell.swift */,
 				900B5D99228AB45000EE69FD /* PaintingCell.swift */,
 				90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */,
 				90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */,
