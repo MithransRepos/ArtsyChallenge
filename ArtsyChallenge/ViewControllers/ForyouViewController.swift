@@ -1,5 +1,5 @@
 //
-//  ForYouViewController.swift
+//  ForyouViewController.swift
 //  ArtsyChallenge
 //
 //  Created by Mithran Natarajan on 5/15/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForYouViewController: BaseChildViewController {
+class ForyouViewController: BaseChildViewController {
     private var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -34,7 +34,7 @@ class ForYouViewController: BaseChildViewController {
     }
 }
 
-extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
+extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in _: UITableView) -> Int {
         return 5
     }

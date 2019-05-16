@@ -45,6 +45,7 @@ class TableCollectionViewCell: UITableViewCell {
     private func registerCollectionViewCells() {
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
+        collectionView.register(FollowArtistCell.self, forCellWithReuseIdentifier: FollowArtistCell.identifier)
     }
 }
 

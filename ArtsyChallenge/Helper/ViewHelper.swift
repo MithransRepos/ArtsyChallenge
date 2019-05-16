@@ -46,4 +46,11 @@ class ViewHelper {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
+    
+    static func getButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
 }
