@@ -65,7 +65,6 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
-        
         return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
     }
 }

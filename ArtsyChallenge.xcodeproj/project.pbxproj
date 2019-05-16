@@ -18,6 +18,7 @@
 		900B5D9A228AB45000EE69FD /* PaintingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D99228AB45000EE69FD /* PaintingCell.swift */; };
 		900B5D9E228B998800EE69FD /* ArtistsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9D228B998700EE69FD /* ArtistsController.swift */; };
 		900B5DA0228B99A900EE69FD /* ArtChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */; };
+		9029C42E228D1B3600ACE327 /* GenericTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9029C42D228D1B3600ACE327 /* GenericTableViewHeader.swift */; };
 		90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */; };
 		90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B37D9422898FD5004A27C7 /* UIColorExtension.swift */; };
 		90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */; };
@@ -71,6 +72,7 @@
 		900B5D99228AB45000EE69FD /* PaintingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCell.swift; sourceTree = "<group>"; };
 		900B5D9D228B998700EE69FD /* ArtistsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsController.swift; sourceTree = "<group>"; };
 		900B5D9F228B99A900EE69FD /* ArtChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtChildViewModel.swift; sourceTree = "<group>"; };
+		9029C42D228D1B3600ACE327 /* GenericTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewHeader.swift; sourceTree = "<group>"; };
 		90B37D8D228985A2004A27C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		90B37D9422898FD5004A27C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		90D8663E228BC09A00A1E5C0 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				90D86643228BE6CD00A1E5C0 /* FooterView.swift */,
 				90D86649228C07C800A1E5C0 /* TableCollectionViewCell.swift */,
 				90D8664D228C2B4900A1E5C0 /* RecommendedFairCell.swift */,
+				9029C42D228D1B3600ACE327 /* GenericTableViewHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				90B37D9522898FD5004A27C7 /* UIColorExtension.swift in Sources */,
 				90FFF0572289735300342FC0 /* RootViewController.swift in Sources */,
 				90D8663F228BC09A00A1E5C0 /* ViewHelper.swift in Sources */,
+				9029C42E228D1B3600ACE327 /* GenericTableViewHeader.swift in Sources */,
 				90D86646228BED2E00A1E5C0 /* ForYouViewController.swift in Sources */,
 				90B37D8E228985A2004A27C7 /* UIViewControllerExtension.swift in Sources */,
 				90FFF05A228974D600342FC0 /* HomeViewController.swift in Sources */,

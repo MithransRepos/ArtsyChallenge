@@ -45,10 +45,6 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         return [ArtistsController(childType: .artist, isFooterVisible: false), ForYouViewController(childType: .forYou, isFooterVisible: false), ArtistsController(childType: .auction, isFooterVisible: false)]
     }
 
-    override func reloadPagerTabStripView() {
-        super.reloadPagerTabStripView()
-    }
-
     override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
         super.configureCell(cell, indicatorInfo: indicatorInfo)
         cell.backgroundColor = .clear
