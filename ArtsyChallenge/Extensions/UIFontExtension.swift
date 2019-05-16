@@ -45,9 +45,8 @@ extension UIFont {
     static func arial(ofSize size: CGFloat, type: FontType = .regular) -> UIFont {
         return customFont(name: "ArialHebrew\(type.rawValue)", size: size)
     }
-    
+
     static func baskerville(ofSize size: CGFloat, type: FontType = .regular) -> UIFont {
         return customFont(name: "Baskerville\(type.rawValue)", size: size)
     }
-    
 }

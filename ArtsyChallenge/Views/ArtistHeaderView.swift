@@ -37,15 +37,15 @@ class ArtistHeaderView: UICollectionReusableView {
     private func addConstraints() {
         avatarImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 20, paddingLeft: 20, width: 45, height: 45)
         authorLabel.anchor(top: topAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 25, paddingLeft: 10, paddingRight: 24)
-        infoLabel.anchor(top: authorLabel.bottomAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 10, paddingRight: 24, height: 22)
+        infoLabel.anchor(top: authorLabel.bottomAnchor, left: avatarImageView.rightAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 24)
     }
 
-    private func setStyle(){
+    private func setStyle() {
         authorLabel.font = UIFont.arial(ofSize: 14, type: .bold)
         infoLabel.font = UIFont.baskerville(ofSize: 14)
         infoLabel.textColor = .gray
     }
-    
+
     func configView() {
         avatarImageView.setAvatarImage(imageUrl: "https://picsum.photos/60/60")
         authorLabel.text = "PABLO PICASSO".uppercased()

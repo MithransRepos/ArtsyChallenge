@@ -50,7 +50,7 @@ extension ArtistsController: UICollectionViewDataSource {
             return cell
         } else {
             let cell: PaitingCell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath) as! PaitingCell
-            cell.configCell()
+            cell.configCell(row: indexPath.row)
             return cell
         }
     }
@@ -72,7 +72,7 @@ extension ArtistsController: WaterfallLayoutDelegate {
         if indexPath.section == 0, childType == .auction {
             return CGSize(width: 200, height: 200)
         }
-        return CGSize(width: 200, height: indexPath.row.isEven ? 350 : 450)
+        return CGSize(width: 200, height: indexPath.row.isEven ? 250 : 350)
     }
 
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
@@ -81,7 +81,7 @@ extension ArtistsController: WaterfallLayoutDelegate {
         }
         return .waterfall(column: 2, distributionMethod: .balanced)
     }
-    
+
     func collectionView(_: UICollectionView, layout _: WaterfallLayout, headerHeightFor _: Int) -> CGFloat? {
         return 65
     }
