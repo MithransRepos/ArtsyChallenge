@@ -17,15 +17,18 @@ class ForYouViewController: BaseChildViewController {
     }
 
     private func setupTableView() {
-        tableView = UITableView(frame: self.view.frame, style: .grouped)
+        tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorColor = .clear
+        tableView.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -99 : 0)
         tableView.register(TableCollectionViewCell.self, forCellReuseIdentifier: TableCollectionViewCell.identifier)
         tableView.register(GenericTableViewHeader.self, forHeaderFooterViewReuseIdentifier: GenericTableViewHeader.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
-        view.addSubview(tableView)
+        
     }
 }
 

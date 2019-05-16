@@ -42,7 +42,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        return [ArtistsController(childType: .artist, isFooterVisible: false), ForYouViewController(childType: .forYou, isFooterVisible: false), ArtistsController(childType: .auction, isFooterVisible: false)]
+        return [ArtistsController(childType: .artist, isFooterVisible: true), ForYouViewController(childType: .forYou, isFooterVisible: true), ArtistsController(childType: .auction, isFooterVisible: true)]
     }
 
     override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {

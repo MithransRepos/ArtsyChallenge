@@ -17,9 +17,10 @@ class ArtistsController: BaseChildViewController {
     }
 
     private func setupCollectionView() {
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: FlowLayoutType.vertical.getLayout())
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: FlowLayoutType.vertical.getLayout())
         view.addSubview(collectionView)
         collectionView.backgroundColor = UIColor.white
+        collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: isFooterVisible ? -99 : 0)
         collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
         collectionView.delegate = self
