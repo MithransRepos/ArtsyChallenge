@@ -21,10 +21,10 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     
     override func viewDidLoad() {
+        footerText = "Sell works from your collection through Artsy"
         setStripBarStyle()
         super.viewDidLoad()
         setupXStripBar()
-        footerText = "Sell works from your collection through Artsy"
     }
 
     private func setStripBarStyle() {
