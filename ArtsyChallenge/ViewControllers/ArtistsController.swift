@@ -61,11 +61,11 @@ extension ArtistsController: UICollectionViewDataSource {
 
 extension ArtistsController: WaterfallLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return getCellSize(at: indexPath.row)
+        return getCellSize(at: indexPath)
     }
     
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
-        return getLayout()
+        return getLayout(for: section)
     }
     
     func collectionView(_: UICollectionView, layout _: WaterfallLayout, headerHeightFor _: Int) -> CGFloat? {
@@ -84,13 +84,17 @@ extension ArtistsController {
         return viewModel.paintingCount
     }
     
-    func getCellSize(at index: Int) -> CGSize{
-        guard childType == .artist else { return CGSize(width: 200, height: 250) }
-        return CGSize(width: 200, height: index.isEven ? 250 : 350)
+    func isLastSection(section: Int) -> Bool {
+        return section == noOfSections - 1
     }
     
-    func getLayout() -> WaterfallLayout.Layout {
-        guard childType == .artist else { return .flow(column: 2) }
+    func getCellSize(at indexPath: IndexPath) -> CGSize{
+        guard childType == .artist || isLastSection(section: indexPath.section) else { return CGSize(width: 200, height: 250) }
+        return CGSize(width: 200, height: indexPath.row.isEven ? 250 : 350)
+    }
+    
+    func getLayout(for section: Int) -> WaterfallLayout.Layout {
+        guard childType == .artist || isLastSection(section: section) else { return .flow(column: 2) }
         return .waterfall(column: 2, distributionMethod: .balanced)
     }
     
@@ -100,7 +104,7 @@ extension ArtistsController {
     }
     
     func getCell(at indexPath: IndexPath) -> UICollectionViewCell {
-        guard childType == .artist else {
+        guard childType == .artist || isLastSection(section: indexPath.section) else {
             let cell: AuctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AuctionCell.identifier, for: indexPath) as! AuctionCell
             cell.configCell(auction: viewModel.getAuction(at: indexPath.row))
             return cell
