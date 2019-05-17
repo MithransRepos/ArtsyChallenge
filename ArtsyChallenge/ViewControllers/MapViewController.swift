@@ -127,6 +127,4 @@ extension MapViewController: ClusterManagerDelegate {
     }
 }
 
-
 class MeAnnotation: Annotation {}
-
