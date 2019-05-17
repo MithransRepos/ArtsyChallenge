@@ -8,9 +8,7 @@
 
 import UIKit
 
-class AuctionCell: UICollectionViewCell {
-    static let identifier = "AuctionCell"
-
+class AuctionCell: BaseCollectionViewCell {
     private let paintingImageView: UIImageView = ViewHelper.getImageView()
 
     private let artistLabel: UILabel = ViewHelper.getLabel()

@@ -72,7 +72,7 @@ class TableCollectionViewCell: UITableViewCell {
     }
 
     private func registerViews() {
-        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
+        collectionView.register(PaitingCell.self)
         collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
         collectionView.register(FollowArtistCell.self, forCellWithReuseIdentifier: FollowArtistCell.identifier)
     }
@@ -93,7 +93,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
             cell.configCell()
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
+            let cell: PaitingCell = collectionView.dequeueReusableCell(for: indexPath) as PaitingCell
             cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
             return cell
         }
