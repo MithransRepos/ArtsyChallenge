@@ -287,8 +287,8 @@ public class SheetViewController: UIViewController {
     }
 
     @objc func dismissTapped() {
-        guard dismissOnBackgroundTap else { return }
-        closeSheet()
+//        guard dismissOnBackgroundTap else { return }
+//        closeSheet()
     }
 
     /// Animates the sheet to the closed state and then dismisses the view controller

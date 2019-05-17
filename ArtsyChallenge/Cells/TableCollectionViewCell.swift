@@ -9,8 +9,6 @@
 import UIKit
 
 class TableCollectionViewCell: UITableViewCell {
-    
-
     static let identifier = "TableCollectionViewCell"
 
     private var layoutType: CollectionViewType = .recommenedArts
@@ -80,7 +78,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
             return cell
         case .paintings:
             let cell: PaitingCell = collectionView.dequeueReusableCell(for: indexPath) as PaitingCell
-                cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
+            cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
             return cell
         }
     }
@@ -104,13 +102,12 @@ extension TableCollectionViewCell: WaterfallLayoutDelegate {
     }
 }
 
-extension TableCollectionViewCell{
-    
+extension TableCollectionViewCell {
     enum CollectionViewType {
         case recommenedArts
         case artistToFollow
         case paintings
-        
+
         func getItemSize(at index: Int) -> CGSize {
             switch self {
             case .recommenedArts:

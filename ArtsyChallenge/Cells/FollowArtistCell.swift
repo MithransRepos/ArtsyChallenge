@@ -9,7 +9,6 @@
 import UIKit
 
 class FollowArtistCell: BaseCollectionViewCell {
-
     private let borderView: UIView = ViewHelper.getView()
 
     private let paintingImageView: UIImageView = ViewHelper.getImageView()

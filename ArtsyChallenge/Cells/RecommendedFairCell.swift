@@ -9,7 +9,6 @@
 import UIKit
 
 class RecommendedFairCell: BaseCollectionViewCell {
-
     private let view: UIView = ViewHelper.getView()
 
     private let label: UILabel = ViewHelper.getLabel()

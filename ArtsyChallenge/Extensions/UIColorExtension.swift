@@ -39,4 +39,6 @@ extension UIColor {
     static var transparentBlack: UIColor {
         return self.init(red: CGFloat(0) / 255.0, green: CGFloat(0) / 255.0, blue: CGFloat(0) / 255.0, alpha: 0.2)
     }
+
+    class var blue: UIColor { return UIColor(rgb: 0x354052) }
 }

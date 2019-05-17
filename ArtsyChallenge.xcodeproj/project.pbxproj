@@ -44,6 +44,9 @@
 		90D97EA8228E49F600DAA402 /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EA7228E49F600DAA402 /* Auction.swift */; };
 		90D97EAA228E91DB00DAA402 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EA9228E91DB00DAA402 /* BaseViewProtocol.swift */; };
 		90D97EAC228E976D00DAA402 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EAB228E976D00DAA402 /* BaseCollectionViewCell.swift */; };
+		90D97EAE228EB8EE00DAA402 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EAD228EB8EE00DAA402 /* DummyViewController.swift */; };
+		90D97EB0228EC1B800DAA402 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EAF228EC1B800DAA402 /* AnnotationView.swift */; };
+		90D97EB2228EC24100DAA402 /* MKMapViewExtentension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D97EB1228EC24100DAA402 /* MKMapViewExtentension.swift */; };
 		90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FFEFE822896C1C00342FC0 /* AppDelegate.swift */; };
 		90FFEFF022896C1D00342FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFEF22896C1D00342FC0 /* Assets.xcassets */; };
 		90FFEFF322896C1D00342FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FFEFF122896C1D00342FC0 /* LaunchScreen.storyboard */; };
@@ -114,6 +117,9 @@
 		90D97EA7228E49F600DAA402 /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
 		90D97EA9228E91DB00DAA402 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		90D97EAB228E976D00DAA402 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		90D97EAD228EB8EE00DAA402 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		90D97EAF228EC1B800DAA402 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		90D97EB1228EC24100DAA402 /* MKMapViewExtentension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtentension.swift; sourceTree = "<group>"; };
 		90FFEFE522896C1C00342FC0 /* ArtsyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtsyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FFEFE822896C1C00342FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FFEFEF22896C1D00342FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 				903462B3228DFB6900A84A2B /* SheetViewController.swift */,
 				903462B5228DFB6900A84A2B /* UIViewCExtension.swift */,
 				903462B4228DFB6900A84A2B /* Yalta.swift */,
+				90D97EAF228EC1B800DAA402 /* AnnotationView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 				900B5D94228A9AB200EE69FD /* UIViewExtension.swift */,
 				90BB4BD5228D2F1900C34426 /* ReusableView.swift */,
 				9034629D228D9E8600A84A2B /* UIFontExtension.swift */,
+				90D97EB1228EC24100DAA402 /* MKMapViewExtentension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 				90FFF059228974D600342FC0 /* HomeViewController.swift */,
 				90FFF05B228974FE00342FC0 /* MapViewController.swift */,
 				90D86647228BED5300A1E5C0 /* BaseChildViewController.swift */,
+				90D97EAD228EB8EE00DAA402 /* DummyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -479,12 +488,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArtsyChallenge/Pods-ArtsyChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cluster/Cluster.framework",
 				"${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cluster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FittedSheets.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
@@ -556,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				900B5D90228A8B0C00EE69FD /* UITabBarItemExtension.swift in Sources */,
+				90D97EAE228EB8EE00DAA402 /* DummyViewController.swift in Sources */,
 				903462BB228DFB6A00A84A2B /* SheetSize.swift in Sources */,
 				90FFEFE922896C1C00342FC0 /* AppDelegate.swift in Sources */,
 				900B5D95228A9AB200EE69FD /* UIViewExtension.swift in Sources */,
@@ -591,6 +603,8 @@
 				900B5D92228A90C400EE69FD /* Painting.swift in Sources */,
 				900B5D8C228A7FC800EE69FD /* UIImageExtension.swift in Sources */,
 				90D8664C228C1E1F00A1E5C0 /* Enum.swift in Sources */,
+				90D97EB2228EC24100DAA402 /* MKMapViewExtentension.swift in Sources */,
+				90D97EB0228EC1B800DAA402 /* AnnotationView.swift in Sources */,
 				90D86648228BED5300A1E5C0 /* BaseChildViewController.swift in Sources */,
 				90D8664E228C2B4900A1E5C0 /* RecommendedFairCell.swift in Sources */,
 			);
