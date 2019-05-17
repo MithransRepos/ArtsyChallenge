@@ -64,7 +64,7 @@ class FollowArtistCell: UICollectionViewCell {
     }
 
     func configCell() {
-        paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300")
+        paintingImageView.setImage(imageUrl: "https://picsum.photos/id/870/200/300/?blur")
         artistLabel.text = "Frank Stella"
         artistLocationLabel.text = "Canadian, 1925 - 1992"
         infoLabel.text = "7 works, 5 for sale"

@@ -21,13 +21,13 @@ class ArtChildViewModel {
     }
 
     private func populateData() {
-        let painting: Painting = Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/200/300")
+        let painting: Painting = Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300")
         paitings = [Painting](repeating: painting, count: 10)
 
-        let artist: Artist = Artist(name: "PABLO PICASSO", artistPic: "https://picsum.photos/60/60", info: "4 works added")
+        let artist: Artist = Artist(name: "PABLO PICASSO", artistPic: "https://picsum.photos/id/237/60/60", info: "4 works added")
         artists = [Artist](repeating: artist, count: 3)
 
-        let auction: Auction = Auction(imageUrl: "https://picsum.photos/200/300", artistName: "PABLO PICASSO", currentStatus: "LIVE IN 1 MIN", isLive: true)
+        let auction: Auction = Auction(imageUrl: "https://picsum.photos/id/870/200/300", artistName: "PABLO PICASSO", currentStatus: "LIVE IN 1 MIN", isLive: true)
         auctions = [Auction](repeating: auction, count: 10)
     }
 }
