@@ -55,6 +55,7 @@ class AuctionCell: UICollectionViewCell {
         artistLabel.font = UIFont.baskerville(ofSize: 16)
         infoLabel.font = UIFont.arial(ofSize: 12)
         artistLabel.backgroundColor = .transparentBlack
+        artistLabel.numberOfLines = 2
     }
 
     private func addConstraints() {
@@ -69,7 +70,7 @@ class AuctionCell: UICollectionViewCell {
         artistLabel.text = auction?.artistName
         infoLabel.text = auction?.currentStatus
         liveLabel.text = auction?.isLive ?? false ? "LIVE" : ""
-//        liveLabel.isHidden = auction?.isLive ?? false
+        liveLabel.isHidden = auction?.isLive ?? false
     }
 
     func configCell(auction: Auction) {
