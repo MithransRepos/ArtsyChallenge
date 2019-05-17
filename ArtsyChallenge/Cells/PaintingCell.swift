@@ -69,7 +69,7 @@ class PaitingCell: UICollectionViewCell {
     private func setData() {
         paintingImageView.setImage(imageUrl: painting?.imageUrl)
         priceLabel.text = painting?.price
-        artistLabel.text = painting?.price
+        artistLabel.text = painting?.artist
         locationLabel.text = painting?.location
         agencyLabel.text = painting?.agency
     }

@@ -70,7 +70,7 @@ class AuctionCell: UICollectionViewCell {
         artistLabel.text = auction?.artistName
         infoLabel.text = auction?.currentStatus
         liveLabel.text = auction?.isLive ?? false ? "LIVE" : ""
-        liveLabel.isHidden = auction?.isLive ?? false
+        liveLabel.isHidden = !(auction?.isLive ?? false)
     }
 
     func configCell(auction: Auction) {
