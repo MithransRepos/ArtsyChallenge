@@ -10,11 +10,21 @@ import UIKit
 import XLPagerTabStrip
 
 class HomeViewController: ButtonBarPagerTabStripViewController {
+    
+    private var footerText: String? {
+        didSet {
+            if let text = footerText {
+               setupFooterView(text: text)
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         setStripBarStyle()
         super.viewDidLoad()
         setupXStripBar()
-        setupFooterView()
+        footerText = "Sell works from your collection through Artsy"
     }
 
     private func setStripBarStyle() {
@@ -35,18 +45,24 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         }
     }
 
-    private func setupFooterView() {
+    private func setupFooterView(text: String) {
         let frame: CGRect = CGRect(x: 0, y: view.height - bottomHeightWithMenu, width: view.frame.width, height: 50)
-        let footer = FooterView(frame: frame, text: "Sell works from your collection through Artsy")
+        let footer = FooterView(frame: frame, text: text)
         view.addSubview(footer)
     }
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        return [ArtistsController(childType: .artist, isFooterVisible: true), ForyouViewController(childType: .forYou, isFooterVisible: true), ArtistsController(childType: .auction, isFooterVisible: true)]
+        return [ArtistsController(childType: .artist, isFooterVisible: isFooterVisible), ForyouViewController(childType: .forYou, isFooterVisible: isFooterVisible), ArtistsController(childType: .auction, isFooterVisible: isFooterVisible)]
     }
 
     override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
         super.configureCell(cell, indicatorInfo: indicatorInfo)
         cell.backgroundColor = .clear
     }
+}
+extension HomeViewController {
+    var isFooterVisible: Bool {
+        return footerText != nil
+    }
+    
 }
