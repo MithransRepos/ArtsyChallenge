@@ -73,7 +73,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
-            cell.configCell(row: indexPath.row, painting: nil)
+            cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/200/300"))
             return cell
         }
     }
