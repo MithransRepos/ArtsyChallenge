@@ -34,7 +34,17 @@ class FollowArtistCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addViews() {
+    func configCell() {
+        paintingImageView.setImage(imageUrl: "https://picsum.photos/id/870/200/300/?blur")
+        artistLabel.text = "Frank Stella"
+        artistLocationLabel.text = "Canadian, 1925 - 1992"
+        infoLabel.text = "7 works, 5 for sale"
+        followButton.setTitle("Follow", for: .normal)
+    }
+}
+
+extension FollowArtistCell: BaseViewProtocol {
+    internal func addViews() {
         addSubview(borderView)
         addSubview(paintingImageView)
         addSubview(artistLabel)
@@ -43,7 +53,7 @@ class FollowArtistCell: UICollectionViewCell {
         addSubview(followButton)
     }
 
-    private func setStyle() {
+    internal func setStyle() {
         borderView.layer.borderWidth = 0.5
         borderView.layer.borderColor = UIColor.lightGray.cgColor
         followButton.backgroundColor = .black
@@ -54,20 +64,12 @@ class FollowArtistCell: UICollectionViewCell {
         infoLabel.font = UIFont.arial(ofSize: 14, type: .light)
     }
 
-    private func addConstraints() {
+    internal func addConstraints() {
         borderView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, width: 250, height: 350)
         paintingImageView.anchor(top: borderView.topAnchor, left: borderView.leftAnchor, right: borderView.rightAnchor, height: 200, margin: 10)
         artistLabel.anchor(top: paintingImageView.bottomAnchor, left: borderView.leftAnchor, right: borderView.rightAnchor, paddingTop: 10, paddingLeft: 10)
         artistLocationLabel.anchor(top: artistLabel.bottomAnchor, left: borderView.leftAnchor, right: borderView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingRight: 10)
         infoLabel.anchor(top: artistLocationLabel.bottomAnchor, left: borderView.leftAnchor, right: borderView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingRight: 10)
         followButton.anchor(top: infoLabel.bottomAnchor, left: borderView.leftAnchor, right: borderView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, width: 30)
-    }
-
-    func configCell() {
-        paintingImageView.setImage(imageUrl: "https://picsum.photos/id/870/200/300/?blur")
-        artistLabel.text = "Frank Stella"
-        artistLocationLabel.text = "Canadian, 1925 - 1992"
-        infoLabel.text = "7 works, 5 for sale"
-        followButton.setTitle("Follow", for: .normal)
     }
 }

@@ -13,8 +13,8 @@ class ArtChildViewModel {
     private var artists: [Artist] = []
 
     private var auctions: [Auction] = []
-    
-    private var auctionStages: [String] = ["Current Live Auctions", "Current Timed Auctions",  "Lots by Artists you Follow"]
+
+    private var auctionStages: [String] = ["Current Live Auctions", "Current Timed Auctions", "Lots by Artists you Follow"]
 
     init() {
         populateData()
@@ -44,7 +44,7 @@ extension ArtChildViewModel {
     var auctionCount: Int {
         return auctions.count
     }
-    
+
     var auctionStageCount: Int {
         return auctionStages.count
     }
@@ -60,7 +60,7 @@ extension ArtChildViewModel {
     func getAuction(at index: Int) -> Auction {
         return auctions[index]
     }
-    
+
     func getAuctionStage(at index: Int) -> String {
         return auctionStages[index]
     }

@@ -10,16 +10,14 @@ import UIKit
 import XLPagerTabStrip
 
 class HomeViewController: ButtonBarPagerTabStripViewController {
-    
     private var footerText: String? {
         didSet {
             if let text = footerText {
-               setupFooterView(text: text)
+                setupFooterView(text: text)
             }
         }
     }
-    
-    
+
     override func viewDidLoad() {
         footerText = "Sell works from your collection through Artsy"
         setStripBarStyle()
@@ -60,9 +58,9 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         cell.backgroundColor = .clear
     }
 }
+
 extension HomeViewController {
     var isFooterVisible: Bool {
         return footerText != nil
     }
-    
 }

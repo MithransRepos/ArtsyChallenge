@@ -18,7 +18,7 @@ class AuctionCell: UICollectionViewCell {
     private let liveLabel: UILabel = ViewHelper.getLabel()
 
     private let infoLabel: UILabel = ViewHelper.getLabel()
-    
+
     private var auction: Auction? {
         didSet {
             setData()
@@ -31,38 +31,9 @@ class AuctionCell: UICollectionViewCell {
         addConstraints()
         setStyle()
     }
-    
+
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    private func addViews() {
-        addSubview(paintingImageView)
-        addSubview(artistLabel)
-        addSubview(liveLabel)
-        addSubview(infoLabel)
-    }
-    
-    
-
-    private func setStyle() {
-        artistLabel.textColor = .white
-        liveLabel.backgroundColor = .white
-        infoLabel.textColor = .white
-        liveLabel.textColor = .black
-        liveLabel.textAlignment = .center
-        liveLabel.font = UIFont.arial(ofSize: 9).bold
-        artistLabel.font = UIFont.baskerville(ofSize: 16)
-        infoLabel.font = UIFont.arial(ofSize: 12)
-        artistLabel.backgroundColor = .transparentBlack
-        artistLabel.numberOfLines = 2
-    }
-
-    private func addConstraints() {
-        paintingImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 250)
-        liveLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 5, width: 30, height: 15)
-        artistLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 5)
-        infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, paddingLeft: 10, paddingBottom: -5)
     }
 
     private func setData() {
@@ -75,5 +46,34 @@ class AuctionCell: UICollectionViewCell {
 
     func configCell(auction: Auction) {
         self.auction = auction
+    }
+}
+
+extension AuctionCell: BaseViewProtocol {
+    internal func addViews() {
+        addSubview(paintingImageView)
+        addSubview(artistLabel)
+        addSubview(liveLabel)
+        addSubview(infoLabel)
+    }
+
+    internal func setStyle() {
+        artistLabel.textColor = .white
+        liveLabel.backgroundColor = .white
+        infoLabel.textColor = .white
+        liveLabel.textColor = .black
+        liveLabel.textAlignment = .center
+        liveLabel.font = UIFont.arial(ofSize: 9).bold
+        artistLabel.font = UIFont.baskerville(ofSize: 16)
+        infoLabel.font = UIFont.arial(ofSize: 12)
+        artistLabel.backgroundColor = .transparentBlack
+        artistLabel.numberOfLines = 2
+    }
+
+    internal func addConstraints() {
+        paintingImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 250)
+        liveLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 5, width: 30, height: 15)
+        artistLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 5)
+        infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, paddingLeft: 10, paddingBottom: -5)
     }
 }

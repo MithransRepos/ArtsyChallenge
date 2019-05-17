@@ -19,31 +19,33 @@ class RecommendedFairCell: UICollectionViewCell {
         super.init(frame: frame)
         addViews()
         addConstraints()
-        setStyles()
+        setStyle()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addViews() {
+    func configCell() {
+        label.text = "PHOTO \n LONDON"
+    }
+}
+
+extension RecommendedFairCell: BaseViewProtocol {
+    internal func addViews() {
         addSubview(view)
         addSubview(label)
     }
 
-    private func addConstraints() {
+    internal func addConstraints() {
         view.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingBottom: 10, width: 80, height: 80)
     }
 
-    private func setStyles() {
+    internal func setStyle() {
         label.numberOfLines = 2
         label.font = UIFont.baskerville(ofSize: 16)
         view.backgroundColor = .random
         view.setRounded()
         label.alignCenter()
-    }
-
-    func configCell() {
-        label.text = "PHOTO \n LONDON"
     }
 }

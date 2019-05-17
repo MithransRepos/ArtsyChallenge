@@ -24,16 +24,6 @@ class HeadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addViews() {
-        addSubview(titleLabel)
-        addSubview(subTitleLabel)
-    }
-
-    private func addConstraints() {
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 20, paddingRight: 20)
-        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
-    }
-
     private func setStyles() {
         titleLabel.font = UIFont.baskerville(ofSize: 30)
         subTitleLabel.font = UIFont.baskerville(ofSize: 20)
@@ -42,5 +32,19 @@ class HeadingView: UIView {
     func configView(title: String, subtitle: String? = nil) {
         titleLabel.text = title
         subTitleLabel.text = subtitle
+    }
+}
+
+extension HeadingView: BaseViewProtocol {
+    internal func setStyle() {}
+
+    internal func addViews() {
+        addSubview(titleLabel)
+        addSubview(subTitleLabel)
+    }
+
+    internal func addConstraints() {
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 20, paddingRight: 20)
+        subTitleLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
     }
 }

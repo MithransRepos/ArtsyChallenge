@@ -23,16 +23,20 @@ class CollectionViewHeader: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addViews() {
+    func configView(title: String, subtitle: String? = nil) {
+        headerView.configView(title: title, subtitle: subtitle)
+    }
+}
+
+extension CollectionViewHeader: BaseViewProtocol {
+    internal func addViews() {
         headerView = HeadingView(frame: frame)
         addSubview(headerView)
     }
 
-    private func addConstraints() {
+    internal func addConstraints() {
         headerView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor)
     }
 
-    func configView(title: String, subtitle: String? = nil) {
-        headerView.configView(title: title, subtitle: subtitle)
-    }
+    internal func setStyle() {}
 }

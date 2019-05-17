@@ -9,7 +9,6 @@
 import UIKit
 
 class ForyouViewController: BaseChildViewController {
-    
     private var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -39,7 +38,7 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in _: UITableView) -> Int {
         return Sections.allCases.count
     }
-    
+
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 1
     }
@@ -82,7 +81,7 @@ extension ForyouViewController {
         case recommendedWorks
         case artistsToFollow
         case artistsYouFollow
-        
+
         func getCollectionViewType() -> TableCollectionViewCell.CollectionViewType {
             switch self {
             case .recommendedFairs:
@@ -92,9 +91,8 @@ extension ForyouViewController {
             case .artistsToFollow:
                 return .artistToFollow
             }
-            
         }
-        
+
         func sectionHeight() -> CGFloat {
             switch self {
             case .recommendedFairs:
@@ -105,7 +103,7 @@ extension ForyouViewController {
                 return 350
             }
         }
-        
+
         func getHeading() -> String {
             switch self {
             case .recommendedFairs:
@@ -120,6 +118,5 @@ extension ForyouViewController {
                 return "Artists you Follow"
             }
         }
-        
     }
 }

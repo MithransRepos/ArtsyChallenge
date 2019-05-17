@@ -25,22 +25,24 @@ class FooterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addViews() {
+    private func setText() {
+        footerLabel.text = text
+    }
+}
+
+extension FooterView: BaseViewProtocol {
+    internal func addViews() {
         addSubview(footerLabel)
     }
 
-    private func addConstraints() {
+    internal func addConstraints() {
         footerLabel.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
         footerLabel.alignVertical()
     }
 
-    private func setStyle() {
+    internal func setStyle() {
         footerLabel.textColor = .white
         footerLabel.font = UIFont.baskerville(ofSize: 16)
         backgroundColor = .black
-    }
-
-    private func setText() {
-        footerLabel.text = text
     }
 }
