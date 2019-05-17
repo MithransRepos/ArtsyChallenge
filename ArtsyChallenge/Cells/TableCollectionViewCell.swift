@@ -73,8 +73,8 @@ class TableCollectionViewCell: UITableViewCell {
 
     private func registerViews() {
         collectionView.register(PaitingCell.self)
-        collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
-        collectionView.register(FollowArtistCell.self, forCellWithReuseIdentifier: FollowArtistCell.identifier)
+        collectionView.register(RecommendedFairCell.self)
+        collectionView.register(FollowArtistCell.self)
     }
 }
 
@@ -85,11 +85,11 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if layoutType == .artistToFollow {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowArtistCell.identifier, for: indexPath as IndexPath) as! FollowArtistCell
+            let cell = collectionView.dequeueReusableCell(for: indexPath) as FollowArtistCell
             cell.configCell()
             return cell
         } else if layoutType == .recommenedArts {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedFairCell.identifier, for: indexPath as IndexPath) as! RecommendedFairCell
+            let cell: RecommendedFairCell = collectionView.dequeueReusableCell(for: indexPath)as RecommendedFairCell
             cell.configCell()
             return cell
         } else {
