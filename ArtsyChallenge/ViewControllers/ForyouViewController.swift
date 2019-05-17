@@ -102,7 +102,7 @@ extension ForyouViewController {
             case .recentlyViewed, .recommendedWorks, .artistsYouFollow:
                 return 200 * 3
             case .artistsToFollow:
-                return 300
+                return 350
             }
         }
         
