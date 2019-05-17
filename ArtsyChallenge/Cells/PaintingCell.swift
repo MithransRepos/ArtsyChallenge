@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PaitingCell: BaseCollectionViewCell {
+class PaitingCell: UICollectionViewCell {
+    static let identifier = "PaintingCell"
+
     private let paintingImageView: UIImageView = ViewHelper.getImageView()
 
     private let priceLabel: UILabel = ViewHelper.getLabel()

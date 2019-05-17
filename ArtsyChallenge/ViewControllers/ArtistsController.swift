@@ -34,8 +34,8 @@ class ArtistsController: BaseChildViewController {
 
     private func registerViews() {
         collectionView.register(ArtistHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistHeaderView.identifier)
-        collectionView.register(PaitingCell.self)
-        collectionView.register(AuctionCell.self)
+        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
+        collectionView.register(AuctionCell.self, forCellWithReuseIdentifier: AuctionCell.identifier)
         collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)
     }
 }
@@ -104,11 +104,11 @@ extension ArtistsController {
 
     func getCell(at indexPath: IndexPath) -> UICollectionViewCell {
         guard childType == .artist || isLastSection(section: indexPath.section) else {
-            let cell: AuctionCell = collectionView.dequeueReusableCell(for: indexPath) as AuctionCell
+            let cell: AuctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AuctionCell.identifier, for: indexPath) as! AuctionCell
             cell.configCell(auction: viewModel.getAuction(at: indexPath.row))
             return cell
         }
-        let cell: PaitingCell = collectionView.dequeueReusableCell(for: indexPath) as PaitingCell
+        let cell: PaitingCell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath) as! PaitingCell
         cell.configCell(row: indexPath.row, painting: viewModel.getPainting(at: indexPath.row))
         return cell
     }
