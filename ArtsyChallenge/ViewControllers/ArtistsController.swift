@@ -19,7 +19,6 @@ class ArtistsController: BaseChildViewController {
     }
     
     override func viewDidLoad() {
-//        childType = .auction
         super.viewDidLoad()
         setupCollectionView()
     }
@@ -27,7 +26,6 @@ class ArtistsController: BaseChildViewController {
     private func setupCollectionView() {
         let layout = ViewHelper.getWaterFallLayout()
         layout.delegate = self
-        layout.headerHeight = 80.0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         view.addSubview(collectionView)
@@ -97,8 +95,8 @@ extension ArtistsController {
     }
     
     func getHeaderHeight() -> CGFloat {
-//        guard childType == .artist else { return 50 }
-        return 50
+        guard childType == .artist else { return 50 }
+        return 65
     }
     
     func getCell(at indexPath: IndexPath) -> UICollectionViewCell {
