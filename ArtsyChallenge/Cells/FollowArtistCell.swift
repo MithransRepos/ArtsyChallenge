@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowArtistCell: BaseCollectionViewCell {
+class FollowArtistCell: UICollectionViewCell {
     static let identifier = "FollowArtistCell"
 
     private let borderView: UIView = ViewHelper.getView()
