@@ -13,7 +13,6 @@ class TableViewHeader: UITableViewHeaderFooterView {
 
     private var headerView: HeadingView!
 
-
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         addViews()
@@ -25,15 +24,13 @@ class TableViewHeader: UITableViewHeaderFooterView {
     }
 
     private func addViews() {
-        headerView = HeadingView(frame: self.frame)
+        headerView = HeadingView(frame: frame)
         addSubview(headerView)
     }
 
     private func addConstraints() {
         headerView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor)
     }
-
-    
 
     func configView(title: String, subtitle: String? = nil) {
         headerView.configView(title: title, subtitle: subtitle)

@@ -15,11 +15,17 @@ class PaitingCell: UICollectionViewCell {
 
     private let priceLabel: UILabel = ViewHelper.getLabel()
 
-    private let authorLabel: UILabel = ViewHelper.getLabel()
+    private let artistLabel: UILabel = ViewHelper.getLabel()
 
     private let locationLabel: UILabel = ViewHelper.getLabel()
 
     private let agencyLabel: UILabel = ViewHelper.getLabel()
+    
+    private var painting: Painting? {
+        didSet {
+            setData()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,11 +33,15 @@ class PaitingCell: UICollectionViewCell {
         addConstraints()
         setStyle()
     }
+    
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     private func addViews() {
         addSubview(paintingImageView)
         addSubview(priceLabel)
-        addSubview(authorLabel)
+        addSubview(artistLabel)
         addSubview(locationLabel)
         addSubview(agencyLabel)
     }
@@ -39,33 +49,33 @@ class PaitingCell: UICollectionViewCell {
     private func addConstraints() {
         paintingImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor)
         priceLabel.anchor(top: paintingImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, height: 20)
-        authorLabel.anchor(top: priceLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 20)
-        locationLabel.anchor(top: authorLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 20)
+        artistLabel.anchor(top: priceLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 20)
+        locationLabel.anchor(top: artistLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 20)
         agencyLabel.anchor(top: locationLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingBottom: 5, height: 20)
     }
 
     private func setStyle() {
         priceLabel.font = UIFont.arial(ofSize: 20)
-        authorLabel.font = UIFont.baskerville(ofSize: 14)
+        artistLabel.font = UIFont.baskerville(ofSize: 14)
         locationLabel.font = UIFont.baskerville(ofSize: 14).italic
         agencyLabel.font = UIFont.arial(ofSize: 12)
 
         priceLabel.textColor = .black
-        authorLabel.textColor = .black
+        artistLabel.textColor = .black
         locationLabel.textColor = .lightBlack
         agencyLabel.textColor = .gray
     }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    private func setData() {
+        paintingImageView.setImage(imageUrl: painting?.imageUrl)
+        priceLabel.text = painting?.price
+        artistLabel.text = painting?.price
+        locationLabel.text = painting?.location
+        agencyLabel.text = painting?.agency
     }
 
-    func configCell(row: Int = 0) {
-        paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300")
+    func configCell(row: Int = 0, painting: Painting?) {
         paintingImageView.anchor(height: row.isEven ? 150 : 250)
-        priceLabel.text = "$6,500"
-        authorLabel.text = "Pablo Picasso"
-        locationLabel.text = "Le crapaud, 1949"
-        agencyLabel.text = "ArtRite"
+        self.painting = painting
     }
 }

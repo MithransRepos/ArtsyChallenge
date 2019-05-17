@@ -9,9 +9,9 @@
 import Foundation
 
 struct Painting {
-    let id: Int
-    let price: Int
+    let price: String
     let artist: String
-    let about: String
+    let location: String
+    let agency: String
     let imageUrl: String
 }

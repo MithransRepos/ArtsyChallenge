@@ -73,7 +73,7 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
-            cell.configCell()
+            cell.configCell(row: indexPath.row, painting: nil)
             return cell
         }
     }

@@ -11,14 +11,19 @@ import UIKit
 class AuctionCell: UICollectionViewCell {
     static let identifier = "AuctionCell"
 
-    
     private let paintingImageView: UIImageView = ViewHelper.getImageView()
 
-    private let authorLabel: UILabel = ViewHelper.getLabel()
+    private let artistLabel: UILabel = ViewHelper.getLabel()
 
     private let liveLabel: UILabel = ViewHelper.getLabel()
 
     private let infoLabel: UILabel = ViewHelper.getLabel()
+    
+    private var auction: Auction? {
+        didSet {
+            setData()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,41 +31,48 @@ class AuctionCell: UICollectionViewCell {
         addConstraints()
         setStyle()
     }
+    
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     private func addViews() {
         addSubview(paintingImageView)
-        addSubview(authorLabel)
+        addSubview(artistLabel)
         addSubview(liveLabel)
         addSubview(infoLabel)
     }
+    
+    
 
     private func setStyle() {
-        authorLabel.textColor = .white
+        artistLabel.textColor = .white
         liveLabel.backgroundColor = .white
         infoLabel.textColor = .white
         liveLabel.textColor = .black
         liveLabel.textAlignment = .center
         liveLabel.font = UIFont.arial(ofSize: 9).bold
-        authorLabel.font = UIFont.baskerville(ofSize: 16)
+        artistLabel.font = UIFont.baskerville(ofSize: 16)
         infoLabel.font = UIFont.arial(ofSize: 12)
-        authorLabel.backgroundColor = .transparentBlack
+        artistLabel.backgroundColor = .transparentBlack
     }
 
     private func addConstraints() {
         paintingImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 250)
         liveLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 5, width: 30, height: 15)
-        authorLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 5)
+        artistLabel.anchor(top: topAnchor, left: leftAnchor, right: liveLabel.leftAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 5)
         infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, paddingLeft: 10, paddingBottom: -5)
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func setData() {
+        paintingImageView.setImage(imageUrl: auction?.imageUrl)
+        artistLabel.text = auction?.artistName
+        infoLabel.text = auction?.currentStatus
+        liveLabel.text = auction?.isLive ?? false ? "LIVE" : ""
+//        liveLabel.isHidden = auction?.isLive ?? false
     }
 
-    func configCell() {
-        paintingImageView.setImage(imageUrl: "https://picsum.photos/200/300")
-        authorLabel.text = "Frank Stella"
-        infoLabel.text = "LIVE NOW"
-        liveLabel.text = "LIVE"
+    func configCell(auction: Auction) {
+        self.auction = auction
     }
 }
