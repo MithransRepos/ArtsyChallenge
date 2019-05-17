@@ -23,8 +23,10 @@ class ViewHelper {
         return imageView
     }
 
-    static func getCollectionView(layoutType: FlowLayoutType) -> UICollectionView {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutType.getLayout())
+    static func getHorizontalSliderCollectionView() -> UICollectionView {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false

@@ -9,6 +9,7 @@
 import UIKit
 
 class ForyouViewController: BaseChildViewController {
+    
     private var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -36,33 +37,33 @@ class ForyouViewController: BaseChildViewController {
 
 extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in _: UITableView) -> Int {
-        return 5
+        return Sections.allCases.count
+    }
+    
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return 1
     }
 
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
         return 50
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tableSection: Sections = Sections(rawValue: section)!
         let headerView: TableViewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: TableViewHeader.identifier) as! TableViewHeader
-        headerView.configView(title: "Recommended Art Fairs")
-        headerView.backgroundColor = .red
+        headerView.configView(title: tableSection.getHeading())
         return headerView
     }
 
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 1
-    }
-
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let layoutType: FlowLayoutType = indexPath.section.isEven ? .horizontal : .vertical
-        let cell: TableCollectionViewCell = TableCollectionViewCell(layoutType: layoutType)
+        let tableSection: Sections = Sections(rawValue: indexPath.section)!
+        let cell: TableCollectionViewCell = TableCollectionViewCell(layoutType: tableSection.getCollectionViewType())
         return cell
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = indexPath.section.isEven ? 350 : 200 * 3
-        return CGFloat(height)
+        let tableSection: Sections = Sections(rawValue: indexPath.section)!
+        return tableSection.sectionHeight()
     }
 
     func tableView(_: UITableView, heightForFooterInSection _: Int) -> CGFloat {
@@ -71,5 +72,54 @@ extension ForyouViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_: UITableView, viewForFooterInSection _: Int) -> UIView? {
         return nil
+    }
+}
+
+extension ForyouViewController {
+    enum Sections: Int, CaseIterable {
+        case recommendedFairs
+        case recentlyViewed
+        case recommendedWorks
+        case artistsToFollow
+        case artistsYouFollow
+        
+        func getCollectionViewType() -> TableCollectionViewCell.CollectionViewType {
+            switch self {
+            case .recommendedFairs:
+                return .recommenedArts
+            case .recentlyViewed, .recommendedWorks, .artistsYouFollow:
+                return .paintings
+            case .artistsToFollow:
+                return .artistToFollow
+            }
+            
+        }
+        
+        func sectionHeight() -> CGFloat {
+            switch self {
+            case .recommendedFairs:
+                return 120
+            case .recentlyViewed, .recommendedWorks, .artistsYouFollow:
+                return 200 * 3
+            case .artistsToFollow:
+                return 300
+            }
+        }
+        
+        func getHeading() -> String {
+            switch self {
+            case .recommendedFairs:
+                return "Recommended Art Fairs"
+            case .recentlyViewed:
+                return "Recently viewed"
+            case .recommendedWorks:
+                return "Recommended works"
+            case .artistsToFollow:
+                return "Artists to Follow"
+            case .artistsYouFollow:
+                return "Artists you Follow"
+            }
+        }
+        
     }
 }
