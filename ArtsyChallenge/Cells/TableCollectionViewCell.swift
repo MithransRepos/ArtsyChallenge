@@ -72,9 +72,9 @@ class TableCollectionViewCell: UITableViewCell {
     }
 
     private func registerViews() {
-        collectionView.register(PaitingCell.self, forCellWithReuseIdentifier: PaitingCell.identifier)
-        collectionView.register(RecommendedFairCell.self, forCellWithReuseIdentifier: RecommendedFairCell.identifier)
-        collectionView.register(FollowArtistCell.self, forCellWithReuseIdentifier: FollowArtistCell.identifier)
+        collectionView.register(PaitingCell.self)
+        collectionView.register(RecommendedFairCell.self)
+        collectionView.register(FollowArtistCell.self)
     }
 }
 
@@ -86,16 +86,16 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch layoutType {
         case .recommenedArts:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedFairCell.identifier, for: indexPath as IndexPath) as! RecommendedFairCell
+            let cell: RecommendedFairCell = collectionView.dequeueReusableCell(for: indexPath) as RecommendedFairCell
             cell.configCell()
             return cell
         case .artistToFollow:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowArtistCell.identifier, for: indexPath as IndexPath) as! FollowArtistCell
+            let cell: FollowArtistCell = collectionView.dequeueReusableCell(for: indexPath) as FollowArtistCell
             cell.configCell()
             return cell
         case .paintings:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
-            cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
+            let cell: PaitingCell = collectionView.dequeueReusableCell(for: indexPath) as PaitingCell
+                cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
             return cell
         }
     }

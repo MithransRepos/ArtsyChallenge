@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RecommendedFairCell: UICollectionViewCell {
-    static let identifier = "RecommendedFairCell"
+class RecommendedFairCell: BaseCollectionViewCell {
 
     private let view: UIView = ViewHelper.getView()
 
