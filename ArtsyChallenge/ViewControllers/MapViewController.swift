@@ -48,7 +48,7 @@ class MapViewController: UIViewController {
         let sheetController = SheetViewController(controller: DummyViewController(), sizes: [.fixed(100), .fixed(300), .halfScreen, .fullScreen, .fixed(100)])
         sheetController.dismissOnBackgroundTap = false
         sheetController.extendBackgroundBehindHandle = true
-        sheetController.topCornersRadius = 30
+        sheetController.topCornersRadius = 15
         sheetController.overlayColor = .clear
         sheetController.pullBarView.backgroundColor = .white
 
