@@ -84,15 +84,16 @@ extension TableCollectionViewCell: UICollectionViewDataSource, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if layoutType == .artistToFollow {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowArtistCell.identifier, for: indexPath as IndexPath) as! FollowArtistCell
-            cell.configCell()
-            return cell
-        } else if layoutType == .recommenedArts {
+        switch layoutType {
+        case .recommenedArts:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedFairCell.identifier, for: indexPath as IndexPath) as! RecommendedFairCell
             cell.configCell()
             return cell
-        } else {
+        case .artistToFollow:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowArtistCell.identifier, for: indexPath as IndexPath) as! FollowArtistCell
+            cell.configCell()
+            return cell
+        case .paintings:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaitingCell.identifier, for: indexPath as IndexPath) as! PaitingCell
             cell.configCell(row: indexPath.row, painting: Painting(price: "$6,500", artist: "Pablo Picasso", location: "Le crapaud, 1949", agency: "ArtRite", imageUrl: "https://picsum.photos/id/870/200/300"))
             return cell
