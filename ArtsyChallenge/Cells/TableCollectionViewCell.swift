@@ -9,22 +9,7 @@
 import UIKit
 
 class TableCollectionViewCell: UITableViewCell {
-    enum CollectionViewType {
-        case recommenedArts
-        case artistToFollow
-        case paintings
-
-        func getItemSize(at index: Int) -> CGSize {
-            switch self {
-            case .recommenedArts:
-                return CGSize(width: 100, height: 100)
-            case .artistToFollow:
-                return CGSize(width: 250, height: 350)
-            case .paintings:
-                return CGSize(width: 200, height: index.isEven ? 250 : 350)
-            }
-        }
-    }
+    
 
     static let identifier = "TableCollectionViewCell"
 
@@ -116,5 +101,25 @@ extension TableCollectionViewCell: WaterfallLayoutDelegate {
 
     func collectionView(_: UICollectionView, layout _: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return layoutType.getItemSize(at: indexPath.row)
+    }
+}
+
+extension TableCollectionViewCell{
+    
+    enum CollectionViewType {
+        case recommenedArts
+        case artistToFollow
+        case paintings
+        
+        func getItemSize(at index: Int) -> CGSize {
+            switch self {
+            case .recommenedArts:
+                return CGSize(width: 100, height: 100)
+            case .artistToFollow:
+                return CGSize(width: 250, height: 350)
+            case .paintings:
+                return CGSize(width: 200, height: index.isEven ? 250 : 350)
+            }
+        }
     }
 }
